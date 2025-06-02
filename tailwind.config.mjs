@@ -1,153 +1,81 @@
-import tailwindcssAnimate from 'tailwindcss-animate'
-import typography from '@tailwindcss/typography'
-
+// tailwind.config.mjs
 /** @type {import('tailwindcss').Config} */
-const config = {
+const tailwindConfig = {
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
-  darkMode: ['selector', '[data-theme="dark"]'],
-  plugins: [tailwindcssAnimate, typography],
-  prefix: '',
-  safelist: [
-    'lg:col-span-4',
-    'lg:col-span-6',
-    'lg:col-span-8',
-    'lg:col-span-12',
-    'border-border',
-    'bg-card',
-    'border-error',
-    'bg-error/30',
-    'border-success',
-    'bg-success/30',
-    'border-warning',
-    'bg-warning/30',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    container: {
-      center: true,
-      padding: {
-        '2xl': '2rem',
-        DEFAULT: '1rem',
-        lg: '2rem',
-        md: '2rem',
-        sm: '1rem',
-        xl: '2rem',
-      },
-      screens: {
-        '2xl': '86rem',
-        lg: '64rem',
-        md: '48rem',
-        sm: '40rem',
-        xl: '80rem',
-      },
-    },
     extend: {
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
       colors: {
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        background: 'hsl(var(--background))',
-        border: 'hsla(var(--border))',
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        foreground: 'hsl(var(--foreground))',
-        input: 'hsl(var(--input))',
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        ring: 'hsl(var(--ring))',
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        success: 'hsl(var(--success))',
-        error: 'hsl(var(--error))',
-        warning: 'hsl(var(--warning))',
+        // Primary Palette
+        primary: '#3C7A89',
+        'primary-light': '#5090A0',
+        'primary-dark': '#2C5A69',
+
+        // Secondary Palette
+        secondary: '#DB5461',
+        'secondary-light': '#E37883',
+        'secondary-dark': '#B9343F',
+
+        // Tertiary Colors
+        tertiary: '#4C1E4F',
+        'tertiary-light': '#6C3E6F',
+        'tertiary-dark': '#3C0E3F',
+
+        // Background Colors
+        light: '#FFFFFF',
+        warm: '#FEE1C7',
+        neutral: '#B5A886',
+
+        // Text Colors
+        dark: '#333333',
+        light: '#FFFFFF',
+        muted: '#666666',
+
+        // Backward compatibility
+        'db-red': '#DB5461',
+        purple: '#4C1E4F',
+        tan: '#B5A886',
+        cream: '#FEE1C7',
+        teal: '#3C7A89',
+
+        // Functional mappings
+        backgroundLight: '#FFFFFF',
+        backgroundDark: '#4C1E4F',
+        accent: '#DB5461',
+        altPrimary: '#B5A886',
+        altAccent: '#805561',
+        textLight: '#FFFFFF',
+        textDark: '#333333',
+        error: '#dc3d1c',
+        confirm: '#3dc81c',
+        link: '#3C7A89',
+        darkCard: '#4C1E4F',
+        lightCard: '#FEE1C7',
       },
       fontFamily: {
-        mono: ['var(--font-geist-mono)'],
-        sans: ['var(--font-geist-sans)'],
+        heading: ['var(--font-heading)', 'sans-serif'],
+        body: ['var(--font-body)', 'sans-serif'],
+      },
+      borderRadius: {
+        xl: '1rem',
+        '2xl': '1.5rem',
+      },
+      animation: {
+        heartbeat: 'heartbeat 3s infinite',
       },
       keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+        heartbeat: {
+          '0%': { transform: 'scale(1)' },
+          '14%': { transform: 'scale(1.08)' },
+          '28%': { transform: 'scale(1)' },
+          '42%': { transform: 'scale(1.08)' },
+          '70%': { transform: 'scale(1)' },
         },
       },
-      typography: () => ({
-        DEFAULT: {
-          css: [
-            {
-              '--tw-prose-body': 'var(--text)',
-              '--tw-prose-headings': 'var(--text)',
-              h1: {
-                fontWeight: 'normal',
-                marginBottom: '0.25em',
-              },
-            },
-          ],
-        },
-        base: {
-          css: [
-            {
-              h1: {
-                fontSize: '2.5rem',
-              },
-              h2: {
-                fontSize: '1.25rem',
-                fontWeight: 600,
-              },
-            },
-          ],
-        },
-        md: {
-          css: [
-            {
-              h1: {
-                fontSize: '3.5rem',
-              },
-              h2: {
-                fontSize: '1.5rem',
-              },
-            },
-          ],
-        },
-      }),
     },
   },
-}
+};
 
-export default config
+export default tailwindConfig;
