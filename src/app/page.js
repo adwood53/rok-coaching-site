@@ -12,7 +12,6 @@ import ServicesSection from '@/src/app/components/mainPage/ServicesSection';
 import TestimonialsSection from '@/src/app/components/mainPage/TestimonialsSection';
 import ContactSection from '@/src/app/components/mainPage/ContactSection';
 import FooterSection from '@/src/app/components/FooterSection';
-import SectionDivider from '@/src/app/components/SectionDivider';
 
 export default function Home() {
   // Scroll to hash on load
@@ -36,7 +35,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-light text-textDark overflow-hidden">
+    <main className="min-h-screen bg-white text-gray-900 overflow-hidden">
       {/* Initial loading animation for the whole page */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -47,49 +46,58 @@ export default function Home() {
 
         <HeroSection />
 
-        <SectionDivider
-          variant="gradient"
-          height="6px"
-          className="my-0"
-        />
+        {/* Minimal Section Divider */}
+        <div className="h-px bg-gray-200 max-w-screen-xl mx-auto" />
 
         <div id="about">
           <AboutRhondaSection />
         </div>
 
-        <SectionDivider
-          variant="secondary-gradient"
-          height="6px"
-          className="my-0"
-        />
+        <div className="h-px bg-gray-200 max-w-screen-xl mx-auto" />
 
         <WhoIHelpSection />
 
-        <SectionDivider
-          variant="primary-gradient"
-          height="6px"
-          className="my-0"
-        />
+        <div className="h-px bg-gray-200 max-w-screen-xl mx-auto" />
 
         <div id="services">
           <ServicesSection />
         </div>
 
-        <SectionDivider
-          variant="tertiary-gradient"
-          height="6px"
-          className="my-0"
-        />
+        <div className="h-px bg-gray-200 max-w-screen-xl mx-auto" />
 
         <div id="testimonials">
           <TestimonialsSection />
         </div>
 
-        <SectionDivider
-          variant="gradient"
-          height="6px"
-          className="my-0"
-        />
+        {/* Newsletter Section - Minimal */}
+        <section className="py-16 bg-black">
+          <div className="container max-w-2xl text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-2xl font-light tracking-wide text-white mb-4">
+                Stay Connected
+              </h3>
+              <p className="text-sm text-gray-400 mb-8 font-light">
+                Join our newsletter for insights on leadership,
+                confidence, and growth.
+              </p>
+              <div className="flex max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 bg-transparent border border-gray-700 text-white placeholder-gray-500 focus:border-white focus:outline-none text-sm"
+                />
+                <button className="px-6 py-3 bg-white text-black text-sm font-medium tracking-wide uppercase hover:bg-gray-100 transition-colors">
+                  Subscribe
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
         <div id="contact">
           <ContactSection />

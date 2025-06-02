@@ -8,11 +8,20 @@ import { motion } from 'framer-motion';
 
 export default function AboutRhondaSection() {
   const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 1, ease: 'easeOut' },
+    },
+  };
+
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -40 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 1, ease: 'easeOut' },
     },
   };
 
@@ -20,37 +29,37 @@ export default function AboutRhondaSection() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
 
   return (
-    <section className="py-20 bg-light relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute right-0 top-0 h-full w-1/4 bg-gradient-to-l from-warm to-transparent z-0"></div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="py-20 lg:py-32 bg-white relative">
+      <div className="container max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
           {/* Left Column - Image */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            variants={fadeInLeft}
+            className="lg:col-span-5"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-[3/4] overflow-hidden">
               <Image
                 src="/images/photos/rhonda-headshots/2.jpg"
-                alt="Rhonda Olsen - I've Been Where You Are"
-                width={500}
-                height={600}
-                className="object-cover w-full h-[600px]"
+                alt="Rhonda Olsen - ROK Coaching Founder"
+                fill
+                className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                quality={95}
               />
-              {/* Quote overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6">
-                <p className="text-white text-lg font-medium italic">
+              {/* Minimal overlay for text on mobile */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
+
+              {/* Mobile quote overlay */}
+              <div className="absolute bottom-8 left-6 right-6 lg:hidden">
+                <p className="text-white text-sm font-light italic leading-relaxed">
                   &quot;I&apos;m a woman who knows what it feels like
                   to second-guess yourself, dim your light, or shrink
                   your ambition to fit the room.&quot;
@@ -65,91 +74,121 @@ export default function AboutRhondaSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="space-y-8"
+            className="lg:col-span-7 space-y-8"
           >
+            {/* Brand Label */}
+            <motion.p
+              variants={fadeInUp}
+              className="text-xs font-medium tracking-[0.2em] uppercase text-gray-500"
+            >
+              About the Founder
+            </motion.p>
+
+            {/* Main Headline */}
             <motion.div variants={fadeInUp}>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
-                I&apos;ve Been Where You Are. That&apos;s Why I Built
-                ROK.
+              <h2 className="text-3xl lg:text-5xl font-heading font-bold leading-tight tracking-tight text-primary mb-6">
+                I've Been Where You Are.
+                <br />
+                <span className="font-body italic">
+                  That's Why I Built ROK.
+                </span>
               </h2>
             </motion.div>
 
+            {/* Content Blocks */}
             <motion.div
               variants={fadeInUp}
-              className="space-y-6 text-lg text-tertiary leading-relaxed"
+              className="space-y-6 text-gray-600 leading-relaxed"
             >
-              <p>
-                I&apos;m{' '}
-                <strong className="text-primary">Rhonda Olsen</strong>
-                , business coach, mentor and trainer with a 25-year
-                global career in sales, marketing and operations.
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                {/* Left Content */}
+                <div className="space-y-6">
+                  <p className="text-base lg:text-lg font-light text-tertiary">
+                    I'm{' '}
+                    <span className="text-primary font-medium">
+                      Rhonda Olsen
+                    </span>
+                    , business coach, mentor and trainer with a
+                    25-year global career in sales, marketing and
+                    operations.
+                  </p>
 
-              <p>
-                But I&apos;m also a woman who knows what it feels like
-                to second-guess yourself, dim your light, or shrink
-                your ambition to fit the room.
-              </p>
+                  <p className="text-sm lg:text-base font-light text-tertiary">
+                    But I'm also a woman who knows what it feels like
+                    to second-guess yourself, dim your light, or
+                    shrink your ambition to fit the room.
+                  </p>
+                </div>
 
-              <p>
-                <strong className="text-secondary">
-                  ROK Coaching was born to change that.
-                </strong>
-                <br />I work with women who are ready to step into
-                their full potential - with clarity, confidence, and
-                no apologies.
-              </p>
+                {/* Right Content */}
+                <div className="space-y-6">
+                  <p className="text-base lg:text-lg font-light text-tertiary">
+                    <span className="text-secondary font-medium">
+                      ROK Coaching was born to change that.
+                    </span>
+                    <br />I work with women who are ready to step into
+                    their full potential - with clarity, confidence,
+                    and no apologies.
+                  </p>
 
-              <p className="text-xl font-semibold text-primary">
-                Let&apos;s make <em>your</em> bold vision a reality.
-              </p>
+                  <p className="text-lg lg:text-xl font-light text-primary">
+                    Let's make{' '}
+                    <span className="font-body italic">your</span>{' '}
+                    bold vision a reality.
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
+            {/* Stats Grid */}
+            <motion.div
+              variants={fadeInUp}
+              className="grid grid-cols-3 gap-8 py-8 border-t border-neutral"
+            >
+              <div className="text-center lg:text-left">
+                <div className="text-2xl lg:text-3xl font-light text-secondary mb-1">
+                  25+
+                </div>
+                <div className="text-xs tracking-wide uppercase text-tertiary">
+                  Years Experience
+                </div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-2xl lg:text-3xl font-light text-secondary mb-1">
+                  20+
+                </div>
+                <div className="text-xs tracking-wide uppercase text-tertiary">
+                  Countries
+                </div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-2xl lg:text-3xl font-light text-secondary mb-1">
+                  40+
+                </div>
+                <div className="text-xs tracking-wide uppercase text-tertiary">
+                  Nationalities
+                </div>
+              </div>
+            </motion.div>
+
+            {/* CTA Buttons */}
             <motion.div
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
                 href="/about"
-                className="btn-primary px-6 py-3 rounded-xl hover:scale-105 transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-sm font-heading font-medium tracking-wide uppercase hover:bg-primary-light transition-all duration-300 min-w-[200px]"
               >
-                Find out more about me
+                Find Out More About Me
               </Link>
+
               <Link
                 href="#contact"
-                className="btn-outline px-6 py-3 rounded-xl hover:scale-105 transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 border border-primary text-primary text-sm font-heading font-medium tracking-wide uppercase hover:bg-primary hover:text-white transition-all duration-300 min-w-[200px]"
               >
-                Let&apos;s Connect
+                Let's Connect
               </Link>
-            </motion.div>
-
-            {/* Stats/Credentials */}
-            <motion.div
-              variants={fadeInUp}
-              className="grid grid-cols-3 gap-6 pt-8 border-t border-neutral"
-            >
-              <div className="text-center">
-                <div className="text-3xl font-bold text-secondary mb-2">
-                  25+
-                </div>
-                <div className="text-sm text-tertiary">
-                  Years Experience
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-secondary mb-2">
-                  20+
-                </div>
-                <div className="text-sm text-tertiary">Countries</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-secondary mb-2">
-                  40+
-                </div>
-                <div className="text-sm text-tertiary">
-                  Nationalities
-                </div>
-              </div>
             </motion.div>
           </motion.div>
         </div>

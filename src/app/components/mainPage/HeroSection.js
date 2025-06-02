@@ -1,176 +1,283 @@
 // src/app/components/mainPage/HeroSection.js
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function HeroSection() {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const slides = [
+    {
+      id: 1,
+      image: '/images/photos/rhonda-headshots/1.jpg',
+      title: 'Confidence to Lead.',
+      subtitle: 'Power to Grow.',
+      description:
+        'ROK Coaching helps women unlock their boldest selves in business - with mentoring, strategy, and the belief they deserve to scale, lead, and thrive.',
+      cta: 'Start Your Journey',
+      ctaLink: '#services',
+      secondaryCta: 'Book Free Discovery Call',
+      secondaryCtaLink: '#contact',
     },
+    {
+      id: 2,
+      image: '/images/photos/rhonda-headshots/2.jpg',
+      title: "I've Been Where You Are.",
+      subtitle: "That's Why I Built ROK.",
+      description:
+        "I'm a woman who knows what it feels like to second-guess yourself, dim your light, or shrink your ambition to fit the room.",
+      cta: 'Find Out More About Me',
+      ctaLink: '#about',
+      secondaryCta: "Let's Connect",
+      secondaryCtaLink: '#contact',
+    },
+    {
+      id: 3,
+      image: '/images/photos/rhonda-headshots/3.jpg',
+      title: 'Ways to Work Together',
+      subtitle:
+        '1:1 Coaching • Strategy Days • Scale & Grow Mentorship',
+      description:
+        'Choose the path that feels right for your journey - from intensive 1:1 coaching to strategic deep dives and community support.',
+      cta: 'Explore Services',
+      ctaLink: '#services',
+      secondaryCta: 'Book Discovery Call',
+      secondaryCtaLink: '#contact',
+    },
+  ];
+
+  // Auto-advance slides
+  useEffect(() => {
+    if (!isClient) return;
+
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [slides.length, isClient]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
-  const staggerContainer = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + slides.length) % slides.length
+    );
   };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  if (!isClient) {
+    return (
+      <div className="relative w-full h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block w-8 h-8 border border-gray-300 border-t-black rounded-full animate-spin mb-4"></div>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-warm via-light to-neutral-light">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 right-20 w-40 h-40 bg-secondary rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-tertiary rounded-full blur-2xl"></div>
-      </div>
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* Background Slides */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.02 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: 'easeInOut' }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={slides[currentSlide].image}
+            alt={`${slides[currentSlide].title} - ROK Coaching`}
+            fill
+            className="object-cover object-center"
+            priority
+            quality={95}
+          />
+          {/* Minimalist Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/40 to-transparent" />
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 z-10 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text Content */}
-          <motion.div
-            className="max-w-2xl"
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary mb-6"
-              variants={fadeInUp}
-            >
-              <span className="block mb-2">Confidence to Lead.</span>
-              <span className="text-gradient">Power to Grow.</span>
-            </motion.h1>
-
-            <motion.p
-              className="text-xl md:text-2xl text-tertiary mb-8 font-body leading-relaxed"
-              variants={fadeInUp}
-            >
-              ROK Coaching helps women unlock their boldest selves in
-              business - with mentoring, strategy, and the belief they
-              deserve to scale, lead, and thrive.
-            </motion.p>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 mb-8"
-              variants={fadeInUp}
-            >
-              <Link
-                href="#services"
-                className="btn-primary px-8 py-4 text-lg font-semibold rounded-xl hover:scale-105 transition-all shadow-lg"
+      {/* Content Overlay */}
+      <div className="relative z-10 h-full flex items-center">
+        <div className="container max-w-6xl">
+          <div className="max-w-2xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 1, ease: 'easeOut' }}
+                className="text-white"
               >
-                🔸 Start Your Journey
-              </Link>
-              <Link
-                href="#contact"
-                className="btn-outline px-8 py-4 text-lg font-semibold rounded-xl hover:scale-105 transition-all"
-              >
-                🔸 Book a Free Discovery Call
-              </Link>
-            </motion.div>
+                {/* Brand Label */}
+                <motion.p
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2, duration: 0.8 }}
+                  className="text-xs font-medium tracking-[0.2em] uppercase mb-6 text-gray-200"
+                >
+                  ROK Coaching
+                </motion.p>
 
-            <motion.div
-              className="flex items-center gap-6 text-sm text-tertiary"
-              variants={fadeInUp}
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                <span>25+ Years Experience</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                <span>Global Leadership</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                <span>Women Empowerment</span>
-              </div>
-            </motion.div>
-          </motion.div>
+                {/* Main Headline */}
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1, duration: 1 }}
+                  className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-[0.9] tracking-tight mb-4 text-white"
+                >
+                  {slides[currentSlide].title}
+                </motion.h1>
 
-          {/* Right Column - Image */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/photos/rhonda-headshots/1.jpg"
-                alt="Rhonda Olsen - Business Coach and Mentor"
-                width={600}
-                height={700}
-                className="object-cover w-full h-[600px]"
-                priority
-              />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent"></div>
-            </div>
+                {/* Subtitle */}
+                <motion.h2
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  className="text-lg md:text-xl font-body font-light tracking-wide text-gray-200 mb-8 max-w-lg leading-relaxed"
+                >
+                  {slides[currentSlide].subtitle}
+                </motion.h2>
 
-            {/* Floating elements */}
-            <motion.div
-              className="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg"
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            >
-              <div className="text-2xl">👑</div>
-            </motion.div>
+                {/* Description */}
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  className="text-sm md:text-base font-light text-gray-300 mb-10 max-w-lg leading-relaxed"
+                >
+                  {slides[currentSlide].description}
+                </motion.p>
 
-            <motion.div
-              className="absolute -bottom-6 -left-6 bg-secondary text-white p-4 rounded-xl shadow-lg"
-              animate={{ y: [0, 10, 0] }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: 'easeInOut',
-                delay: 1.5,
-              }}
-            >
-              <div className="text-sm font-semibold">
-                Unlock Your Potential
-              </div>
-            </motion.div>
-          </motion.div>
+                {/* CTA Buttons */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7, duration: 0.8 }}
+                  className="flex flex-col sm:flex-row gap-4"
+                >
+                  <Link
+                    href={slides[currentSlide].ctaLink}
+                    className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-white text-sm font-heading font-medium tracking-wide uppercase hover:bg-secondary-light transition-all duration-300 min-w-[200px]"
+                  >
+                    {slides[currentSlide].cta}
+                  </Link>
+
+                  <Link
+                    href={slides[currentSlide].secondaryCtaLink}
+                    className="inline-flex items-center justify-center px-8 py-4 border border-white text-white text-sm font-heading font-medium tracking-wide uppercase hover:bg-white hover:text-primary transition-all duration-300 min-w-[200px]"
+                  >
+                    {slides[currentSlide].secondaryCta}
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
+      {/* Navigation Controls */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex items-center gap-6">
+          {/* Slide Indicators */}
+          <div className="flex gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-2 h-2 transition-all duration-300 ${
+                  index === currentSlide
+                    ? 'bg-white'
+                    : 'bg-white/40 hover:bg-white/60'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Side Navigation Arrows - Minimal */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300"
+        aria-label="Previous slide"
       >
-        <div className="flex flex-col items-center text-tertiary">
-          <span className="text-sm mb-2">Scroll to explore</span>
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M12 16l-6-6h12l-6 6z" />
-          </svg>
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1}
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300"
+        aria-label="Next slide"
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1}
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-8 right-8 z-20"
+      >
+        <div className="flex flex-col items-center text-white">
+          <span className="text-xs tracking-widest uppercase mb-2 rotate-90 origin-center">
+            Scroll
+          </span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+            className="w-px h-12 bg-white/60"
+          />
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 }

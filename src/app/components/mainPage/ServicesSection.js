@@ -8,11 +8,11 @@ import { motion } from 'framer-motion';
 
 export default function ServicesSection() {
   const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 1, ease: 'easeOut' },
     },
   };
 
@@ -28,7 +28,7 @@ export default function ServicesSection() {
   const services = [
     {
       title: '1:1 Empowerment Coaching',
-      description:
+      subtitle:
         'Deep coaching to rediscover your confidence, map your goals, and own your brilliance.',
       image: '/images/photos/rhonda-headshots/4.jpg',
       features: [
@@ -37,12 +37,11 @@ export default function ServicesSection() {
         'Leadership development',
         'Mindset transformation',
       ],
-      icon: '👑',
-      color: 'primary',
+      category: 'Individual',
     },
     {
       title: 'Strategy Days',
-      description:
+      subtitle:
         'Focused time to rewire your offer, brand or leadership strategy - and leave recharged.',
       image: '/images/photos/rhonda-headshots/5.jpg',
       features: [
@@ -51,12 +50,11 @@ export default function ServicesSection() {
         'Leadership strategy',
         'Action planning',
       ],
-      icon: '⚡',
-      color: 'secondary',
+      category: 'Intensive',
     },
     {
       title: 'Scale & Grow Mentorship',
-      description:
+      subtitle:
         'For ambitious founders ready to take their business global - with structure, support and soul.',
       image: '/images/photos/rhonda-headshots/6.jpg',
       features: [
@@ -65,12 +63,11 @@ export default function ServicesSection() {
         'Operations scaling',
         'Cultural integration',
       ],
-      icon: '🚀',
-      color: 'tertiary',
+      category: 'Mentorship',
     },
     {
       title: 'Confidence Club',
-      description: 'A space for women to rise together.',
+      subtitle: 'A space for women to rise together.',
       image: '/images/photos/rhonda-headshots/7.jpg',
       features: [
         'Group mentorship',
@@ -78,37 +75,39 @@ export default function ServicesSection() {
         'Monthly workshops',
         'Community building',
       ],
-      icon: '🌟',
-      color: 'secondary',
+      category: 'Community',
       comingSoon: true,
     },
   ];
 
   return (
-    <section
-      id="services"
-      className="py-20 bg-light relative overflow-hidden"
-    >
-      {/* Background Pattern */}
-      <div className="absolute right-0 top-0 h-full w-1/4 bg-gradient-to-l from-warm to-transparent z-0"></div>
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 lg:py-32 bg-gray-50">
+      <div className="container max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Section Header */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-center mb-16"
+          className="text-center mb-16 lg:mb-24"
         >
+          <motion.p
+            variants={fadeInUp}
+            className="text-xs font-medium tracking-[0.2em] uppercase text-gray-500 mb-4"
+          >
+            Services
+          </motion.p>
+
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6"
+            className="text-3xl lg:text-5xl font-light leading-tight tracking-tight text-black mb-6"
           >
             Ways to Work Together
           </motion.h2>
+
           <motion.p
             variants={fadeInUp}
-            className="text-xl text-tertiary max-w-3xl mx-auto"
+            className="text-lg font-light text-gray-600 max-w-2xl mx-auto"
           >
             Choose the path that feels right for your journey - from
             intensive 1:1 coaching to strategic deep dives and
@@ -116,7 +115,8 @@ export default function ServicesSection() {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -125,101 +125,114 @@ export default function ServicesSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.1 }}
-              className="group relative"
+              className="group relative bg-white overflow-hidden hover:shadow-fashion transition-all duration-700"
             >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 h-full">
-                {/* Image Header */}
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              {/* Image */}
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  quality={90}
+                />
 
-                  {/* Icon */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-white rounded-xl flex items-center justify-center text-2xl shadow-lg">
-                    {service.icon}
-                  </div>
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-                  {/* Coming Soon Badge */}
-                  {service.comingSoon && (
-                    <div className="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                {/* Category Label */}
+                <div className="absolute top-6 left-6">
+                  <span className="inline-block px-3 py-1 bg-white/90 text-black text-xs font-medium tracking-wide uppercase">
+                    {service.category}
+                  </span>
+                </div>
+
+                {/* Coming Soon Badge */}
+                {service.comingSoon && (
+                  <div className="absolute top-6 right-6">
+                    <span className="inline-block px-3 py-1 bg-accent text-white text-xs font-medium tracking-wide uppercase">
                       Coming Soon
-                    </div>
-                  )}
-                </div>
+                    </span>
+                  </div>
+                )}
+              </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <h3
-                    className={`text-2xl font-heading font-bold mb-3 text-${service.color}`}
-                  >
-                    {service.title}
-                  </h3>
-                  <p className="text-tertiary mb-4 leading-relaxed">
-                    {service.description}
-                  </p>
+              {/* Content */}
+              <div className="p-8 lg:p-10">
+                {/* Title */}
+                <h3 className="text-xl lg:text-2xl font-light text-black mb-4 leading-tight">
+                  {service.title}
+                </h3>
 
-                  {/* Features */}
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, i) => (
-                      <li
-                        key={i}
-                        className="flex items-center gap-2 text-sm text-tertiary"
-                      >
-                        <div className="w-1.5 h-1.5 bg-secondary rounded-full"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Subtitle */}
+                <p className="text-sm lg:text-base font-light text-gray-600 mb-6 leading-relaxed">
+                  {service.subtitle}
+                </p>
 
-                  {/* CTA */}
-                  <Link
-                    href="#contact"
-                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all ${
-                      service.comingSoon
-                        ? 'bg-neutral text-neutral-dark cursor-not-allowed'
-                        : `bg-${service.color} text-white hover:scale-105 hover:shadow-lg`
-                    }`}
-                  >
-                    {service.comingSoon
-                      ? 'Join Waitlist'
-                      : 'Learn More'}
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
+                {/* Features List */}
+                <div className="grid grid-cols-2 gap-2 mb-8">
+                  {service.features.map((feature, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center text-xs text-gray-500"
                     >
-                      <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
-                    </svg>
-                  </Link>
+                      <div className="w-1 h-1 bg-black mr-2 flex-shrink-0" />
+                      {feature}
+                    </div>
+                  ))}
                 </div>
+
+                {/* CTA */}
+                <Link
+                  href={service.comingSoon ? '#contact' : '#contact'}
+                  className={`inline-flex items-center text-sm font-medium tracking-wide uppercase transition-all duration-300 ${
+                    service.comingSoon
+                      ? 'text-gray-400 cursor-not-allowed'
+                      : 'text-black hover:text-gray-600 group'
+                  }`}
+                >
+                  {service.comingSoon
+                    ? 'Join Waitlist'
+                    : 'Learn More'}
+                  {!service.comingSoon && (
+                    <svg
+                      className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  )}
+                </Link>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA Section */}
         <motion.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-center bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-2xl shadow-xl"
+          className="text-center bg-black py-16 lg:py-20 px-8 lg:px-12"
         >
-          <h3 className="text-2xl font-heading font-bold mb-4">
+          <h3 className="text-2xl lg:text-3xl font-light text-white mb-6 leading-tight">
             Ready to Unlock Your Potential?
           </h3>
-          <p className="text-lg mb-6 opacity-90">
+          <p className="text-base font-light text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
             Let&apos;s have a conversation about where you are and
             where you want to be.
           </p>
           <Link
             href="#contact"
-            className="btn-secondary bg-white text-primary hover:bg-neutral-light px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-all"
+            className="inline-flex items-center justify-center px-8 py-4 bg-white text-black text-sm font-medium tracking-wide uppercase hover:bg-gray-100 transition-all duration-300 min-w-[250px]"
           >
             Book Your Free Discovery Call
           </Link>
