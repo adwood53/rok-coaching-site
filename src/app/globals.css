@@ -21,14 +21,18 @@
 }
 
 :root {
-  /* ROK Brand Colors - Following Brand Guidelines */
-  --color-primary: #50036C; /* Primary Purple */
-  --color-primary-light: #7A35A0;
-  --color-primary-dark: #3B0251;
+  /* Updated ROK Brand Colors - Red Primary, Gold Secondary, White Background */
+  --color-primary: #FF514D; /* Red as primary */
+  --color-primary-light: #FF7A77;
+  --color-primary-dark: #CC413E;
   
-  --color-secondary: #FF514D; /* Secondary Orange */
-  --color-secondary-light: #FF7A77;
-  --color-secondary-dark: #CC413E;
+  --color-secondary: #D4AF37; /* Gold as secondary */
+  --color-secondary-light: #E6C866;
+  --color-secondary-dark: #B8941F;
+  
+  --color-accent: #D4AF37; /* Gold accent */
+  --color-accent-light: #E6C866;
+  --color-accent-dark: #B8941F;
   
   --color-tertiary: #826466; /* Tertiary Brown */
   --color-tertiary-light: #A08789;
@@ -38,9 +42,12 @@
   --color-neutral-light: #E8E7E5;
   --color-neutral-dark: #B8B5B1;
   
-  --color-warm: #F3E2DA; /* Warm Background */
+  /* Background Colors - White Focused */
+  --color-bg-light: #FFFFFF; /* Primary background */
+  --color-bg-warm: #FFFFFF; /* Changed from warm beige to white */
+  --color-bg-cream: #FAFAFA; /* Very subtle gray for contrast */
   
-  /* Monochrome for Fashion-Forward Elements */
+  /* Monochrome for Sharp Contrast */
   --color-black: #000000;
   --color-white: #ffffff;
   --color-gray-50: #fafafa;
@@ -83,6 +90,9 @@
   --container-max-width: 1200px;
   --container-padding: var(--spacing-6);
   
+  /* NO BORDER RADIUS - Sharp, Fashion-Forward Aesthetic */
+  --border-radius: 0;
+  
   /* Animations */
   --transition-fast: all 0.15s ease;
   --transition-base: all 0.3s ease;
@@ -92,7 +102,7 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-fashion: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  --shadow-fashion: 0 20px 40px -10px rgba(255, 81, 77, 0.15);
 }
 
 /* Import Tailwind */
@@ -127,14 +137,14 @@ body {
   font-family: var(--font-body);
 }
 
-/* Fashion-Forward Headlines with Brand Colors */
+/* Fashion-Forward Headlines with Updated Brand Colors */
 .headline-hero {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: var(--font-weight-bold);
   line-height: 0.9;
   letter-spacing: -0.02em;
-  color: var(--color-primary);
+  color: var(--color-primary); /* Red */
 }
 
 .headline-section {
@@ -143,7 +153,7 @@ body {
   font-weight: var(--font-weight-semibold);
   line-height: 1.1;
   letter-spacing: -0.01em;
-  color: var(--color-primary);
+  color: var(--color-primary); /* Red */
 }
 
 .headline-card {
@@ -153,7 +163,7 @@ body {
   line-height: 1.3;
   text-transform: uppercase;
   letter-spacing: 0.025em;
-  color: var(--color-primary);
+  color: var(--color-primary); /* Red */
 }
 
 /* Body Text */
@@ -178,7 +188,7 @@ body {
   color: var(--color-tertiary-light);
 }
 
-/* Buttons - Fashion-Forward with Brand Colors */
+/* Buttons - Sharp, No Rounding, Red Primary/Gold Secondary */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -191,13 +201,14 @@ body {
   letter-spacing: 0.1em;
   text-decoration: none;
   border: 1px solid transparent;
+  border-radius: 0; /* NO ROUNDING */
   cursor: pointer;
   transition: var(--transition-base);
   min-height: 48px;
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary); /* Red */
   color: var(--color-white);
   border-color: var(--color-primary);
 }
@@ -208,8 +219,8 @@ body {
 }
 
 .btn-secondary {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
+  background-color: var(--color-secondary); /* Gold */
+  color: var(--color-black);
   border-color: var(--color-secondary);
 }
 
@@ -220,7 +231,7 @@ body {
 
 .btn-outline {
   background-color: transparent;
-  color: var(--color-primary);
+  color: var(--color-primary); /* Red */
   border-color: var(--color-primary);
 }
 
@@ -285,17 +296,112 @@ body {
   padding: var(--spacing-16) 0;
 }
 
-/* Brand Color Classes */
-.bg-primary { background-color: var(--color-primary); }
-.bg-secondary { background-color: var(--color-secondary); }
-.bg-tertiary { background-color: var(--color-tertiary); }
-.bg-neutral { background-color: var(--color-neutral); }
-.bg-warm { background-color: var(--color-warm); }
+/* Cards with White Background */
+.card-fashion {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral);
+  transition: var(--transition-base);
+  overflow: hidden;
+}
 
-.text-primary { color: var(--color-primary); }
-.text-secondary { color: var(--color-secondary); }
-.text-tertiary { color: var(--color-tertiary); }
-.text-neutral { color: var(--color-neutral); }
+.card-fashion:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-fashion);
+}
+
+/* Image overlay on mobile for About section */
+.mobile-image-overlay {
+  background: linear-gradient(to top, rgba(255,81,77,0.8) 0%, transparent 60%);
+}
+
+/* Hero section overlays */
+.hero-overlay {
+  background: linear-gradient(to right, rgba(255,81,77,0.7) 0%, rgba(255,81,77,0.4) 50%, transparent 100%);
+}
+
+/* Card hover overlays */
+.card-overlay {
+  background: linear-gradient(to top, rgba(255,81,77,0.6) 0%, transparent 60%);
+}
+
+/* Form Elements - White Background */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: var(--spacing-4);
+  border: 1px solid var(--color-neutral);
+  border-radius: 0; /* NO ROUNDING */
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+  background-color: var(--color-white); /* Always white */
+  transition: var(--transition-base);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* Custom Scrollbar with Brand Colors */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary); /* Red */
+  border-radius: 0; /* NO ROUNDING */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Ensure all backgrounds are white/light */
+body {
+  background-color: var(--color-white); /* Always white */
+}
+
+.section {
+  background-color: var(--color-white); /* Default to white */
+}
+
+.section-light {
+  background-color: var(--color-white);
+}
+
+.section-cream {
+  background-color: var(--color-bg-cream); /* Very light gray */
+}
+
+.section-warm {
+  background-color: var(--color-white); /* Now white instead of warm color */
+}
+
+/* No black backgrounds anywhere */
+.bg-primary { background-color: var(--color-primary); } /* Red */
+.bg-secondary { background-color: var(--color-secondary); } /* Gold */
+.bg-tertiary { background-color: var(--color-tertiary); } /* Brown */
+.bg-neutral { background-color: var(--color-neutral); } /* Light neutral */
+.bg-warm { background-color: var(--color-white); } /* White */
+.bg-light { background-color: var(--color-white); } /* White */
+.bg-white { background-color: var(--color-white); } /* White */
+
+/* Text colors */
+.text-primary { color: var(--color-primary); } /* Red */
+.text-secondary { color: var(--color-secondary); } /* Gold */
+.text-tertiary { color: var(--color-tertiary); } /* Brown */
+.text-neutral { color: var(--color-neutral); } /* Light neutral */
+.text-white { color: var(--color-white); } /* White text for colored backgrounds */
+.text-black { color: var(--color-black); } /* Black text on light backgrounds */
 
 /* Fashion-Forward Elements */
 .text-uppercase {

@@ -48,23 +48,31 @@ export default function Logo({
             {/* Crown Base */}
             <motion.path
               d="M3 16h18v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2z"
-              fill={variant === 'light' ? '#ffffff' : '#50036C'}
+              fill={
+                variant === 'light' ? '#ffffff' : '#FF514D'
+              } /* Red instead of purple */
               variants={iconVariants}
             />
             {/* Crown Points */}
             <motion.path
               d="M12 2l2 6-2 4-2-4 2-6z"
-              fill={variant === 'light' ? '#ffffff' : '#FF514D'}
+              fill={
+                variant === 'light' ? '#ffffff' : '#D4AF37'
+              } /* Gold accent */
               variants={iconVariants}
             />
             <motion.path
               d="M6 4l1.5 8L4 16l-1-4 3-8z"
-              fill={variant === 'light' ? '#ffffff' : '#50036C'}
+              fill={
+                variant === 'light' ? '#ffffff' : '#FF514D'
+              } /* Red */
               variants={iconVariants}
             />
             <motion.path
               d="M18 4l-1.5 8L20 16l1-4-3-8z"
-              fill={variant === 'light' ? '#ffffff' : '#50036C'}
+              fill={
+                variant === 'light' ? '#ffffff' : '#FF514D'
+              } /* Red */
               variants={iconVariants}
             />
             {/* Center Jewel */}
@@ -72,7 +80,9 @@ export default function Logo({
               cx="12"
               cy="8"
               r="1.5"
-              fill={variant === 'light' ? '#ffffff' : '#FF514D'}
+              fill={
+                variant === 'light' ? '#ffffff' : '#D4AF37'
+              } /* Gold accent */
               variants={iconVariants}
             />
           </svg>

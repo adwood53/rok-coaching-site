@@ -81,7 +81,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-gray-50">
+    <section className="py-20 lg:py-32 bg-white">
       <div className="container max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -215,24 +215,24 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Bottom CTA Section */}
+        {/* Bottom CTA Section - White Background with Red */}
         <motion.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-center bg-black py-16 lg:py-20 px-8 lg:px-12"
+          className="text-center bg-white border-2 border-primary py-16 lg:py-20 px-8 lg:px-12"
         >
-          <h3 className="text-2xl lg:text-3xl font-light text-white mb-6 leading-tight">
+          <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-primary mb-6 leading-tight">
             Ready to Unlock Your Potential?
           </h3>
-          <p className="text-base font-light text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base font-light text-tertiary mb-8 max-w-2xl mx-auto leading-relaxed">
             Let&apos;s have a conversation about where you are and
             where you want to be.
           </p>
           <Link
             href="#contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-white text-black text-sm font-medium tracking-wide uppercase hover:bg-gray-100 transition-all duration-300 min-w-[250px]"
+            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-sm font-heading font-medium tracking-wide uppercase hover:bg-primary-light transition-all duration-300 min-w-[250px]"
           >
             Book Your Free Discovery Call
           </Link>

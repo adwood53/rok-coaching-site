@@ -8,16 +8,21 @@ const tailwindConfig = {
   theme: {
     extend: {
       colors: {
-        // ROK Brand Colors - Following Brand Guidelines
+        // Updated ROK Brand Colors - Red Primary, Gold Secondary, White Background
         primary: {
-          DEFAULT: '#50036C',
-          light: '#7A35A0',
-          dark: '#3B0251',
-        },
-        secondary: {
-          DEFAULT: '#FF514D',
+          DEFAULT: '#FF514D', // Red as primary
           light: '#FF7A77',
           dark: '#CC413E',
+        },
+        secondary: {
+          DEFAULT: '#D4AF37', // Gold as secondary/accent
+          light: '#E6C866',
+          dark: '#B8941F',
+        },
+        accent: {
+          DEFAULT: '#D4AF37', // Gold accent
+          light: '#E6C866',
+          dark: '#B8941F',
         },
         tertiary: {
           DEFAULT: '#826466',
@@ -30,30 +35,41 @@ const tailwindConfig = {
           dark: '#B8B5B1',
         },
 
-        // Background colors
-        warm: '#F3E2DA',
+        // Background colors - White focused
+        warm: '#FFFFFF', // Changed to white
         light: '#FFFFFF',
-        cream: '#F3E2DA',
+        cream: '#FAFAFA', // Very light gray for subtle contrast
 
-        // Text colors (for backward compatibility)
+        // Text colors
         backgroundLight: '#FFFFFF',
-        backgroundDark: '#50036C',
+        backgroundDark: '#FF514D', // Red for dark backgrounds
         textLight: '#FFFFFF',
         textDark: '#333333',
 
         // Functional colors
-        accent: '#FF514D',
         error: '#dc3d1c',
         confirm: '#3dc81c',
-        link: '#50036C',
+        link: '#FF514D', // Red for links
 
-        // Keep existing color names for compatibility
-        darkCard: '#50036C',
-        lightCard: '#F3E2DA',
+        // Keep existing names for compatibility but update colors
+        darkCard: '#FF514D', // Red
+        lightCard: '#FFFFFF', // White
 
-        // Monochrome additions for fashion-forward elements
+        // Monochrome for sharp contrast
         black: '#000000',
         white: '#ffffff',
+        gray: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+        },
       },
 
       fontFamily: {
@@ -110,13 +126,15 @@ const tailwindConfig = {
       },
 
       borderRadius: {
+        // NO ROUNDING - All set to 0 for sharp, fashion-forward aesthetic
         none: '0',
-        sm: '0.125rem',
-        md: '0.375rem',
-        lg: '0.5rem',
-        xl: '0.75rem',
-        '2xl': '1rem',
-        '3xl': '1.5rem',
+        sm: '0',
+        md: '0',
+        lg: '0',
+        xl: '0',
+        '2xl': '0',
+        '3xl': '0',
+        DEFAULT: '0',
       },
 
       animation: {
@@ -160,7 +178,7 @@ const tailwindConfig = {
         soft: '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
         medium:
           '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        fashion: '0 20px 40px -10px rgba(80, 3, 108, 0.15)',
+        fashion: '0 20px 40px -10px rgba(255, 81, 77, 0.15)', // Red shadow
       },
 
       backdropBlur: {

@@ -87,10 +87,10 @@ export default function AboutRhondaSection() {
             {/* Main Headline */}
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl lg:text-5xl font-heading font-bold leading-tight tracking-tight text-primary mb-6">
-                I've Been Where You Are.
+                I&apos;ve Been Where You Are.
                 <br />
                 <span className="font-body italic">
-                  That's Why I Built ROK.
+                  That&apos;s Why I Built ROK.
                 </span>
               </h2>
             </motion.div>
@@ -104,7 +104,7 @@ export default function AboutRhondaSection() {
                 {/* Left Content */}
                 <div className="space-y-6">
                   <p className="text-base lg:text-lg font-light text-tertiary">
-                    I'm{' '}
+                    I&apos;m{' '}
                     <span className="text-primary font-medium">
                       Rhonda Olsen
                     </span>
@@ -114,8 +114,8 @@ export default function AboutRhondaSection() {
                   </p>
 
                   <p className="text-sm lg:text-base font-light text-tertiary">
-                    But I'm also a woman who knows what it feels like
-                    to second-guess yourself, dim your light, or
+                    But I&apos;m also a woman who knows what it feels
+                    like to second-guess yourself, dim your light, or
                     shrink your ambition to fit the room.
                   </p>
                 </div>
@@ -132,7 +132,7 @@ export default function AboutRhondaSection() {
                   </p>
 
                   <p className="text-lg lg:text-xl font-light text-primary">
-                    Let's make{' '}
+                    Let&apos;s make{' '}
                     <span className="font-body italic">your</span>{' '}
                     bold vision a reality.
                   </p>
@@ -143,7 +143,7 @@ export default function AboutRhondaSection() {
             {/* Stats Grid */}
             <motion.div
               variants={fadeInUp}
-              className="grid grid-cols-3 gap-8 py-8 border-t border-neutral"
+              className="grid grid-cols-3 gap-8 py-8 border-t border-gray-200"
             >
               <div className="text-center lg:text-left">
                 <div className="text-2xl lg:text-3xl font-light text-secondary mb-1">
@@ -187,7 +187,7 @@ export default function AboutRhondaSection() {
                 href="#contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-primary text-primary text-sm font-heading font-medium tracking-wide uppercase hover:bg-primary hover:text-white transition-all duration-300 min-w-[200px]"
               >
-                Let's Connect
+                Let&apos;s Connect
               </Link>
             </motion.div>
           </motion.div>

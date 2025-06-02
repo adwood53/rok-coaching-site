@@ -109,7 +109,7 @@ export default function HeroSection() {
             priority
             quality={95}
           />
-          {/* Minimalist Overlay */}
+          {/* Red Brand Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/40 to-transparent" />
         </motion.div>
       </AnimatePresence>

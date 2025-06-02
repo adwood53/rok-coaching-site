@@ -46,31 +46,31 @@ export default function Home() {
 
         <HeroSection />
 
-        {/* Minimal Section Divider */}
-        <div className="h-px bg-gray-200 max-w-screen-xl mx-auto" />
+        {/* Minimal Section Divider - Black line only */}
+        <div className="h-px bg-black max-w-screen-xl mx-auto" />
 
         <div id="about">
           <AboutRhondaSection />
         </div>
 
-        <div className="h-px bg-gray-200 max-w-screen-xl mx-auto" />
+        <div className="h-px bg-black max-w-screen-xl mx-auto" />
 
         <WhoIHelpSection />
 
-        <div className="h-px bg-gray-200 max-w-screen-xl mx-auto" />
+        <div className="h-px bg-black max-w-screen-xl mx-auto" />
 
         <div id="services">
           <ServicesSection />
         </div>
 
-        <div className="h-px bg-gray-200 max-w-screen-xl mx-auto" />
+        <div className="h-px bg-black max-w-screen-xl mx-auto" />
 
         <div id="testimonials">
           <TestimonialsSection />
         </div>
 
-        {/* Newsletter Section - Minimal */}
-        <section className="py-16 bg-black">
+        {/* Newsletter Section - White Background with Red Accents */}
+        <section className="py-16 bg-white border-t border-black">
           <div className="container max-w-2xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -78,10 +78,10 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-light tracking-wide text-white mb-4">
+              <h3 className="text-2xl font-heading font-semibold tracking-wide text-primary mb-4">
                 Stay Connected
               </h3>
-              <p className="text-sm text-gray-400 mb-8 font-light">
+              <p className="text-sm text-tertiary mb-8 font-light">
                 Join our newsletter for insights on leadership,
                 confidence, and growth.
               </p>
@@ -89,9 +89,9 @@ export default function Home() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-transparent border border-gray-700 text-white placeholder-gray-500 focus:border-white focus:outline-none text-sm"
+                  className="flex-1 px-4 py-3 bg-white border border-gray-300 text-black placeholder-gray-500 focus:border-primary focus:outline-none text-sm"
                 />
-                <button className="px-6 py-3 bg-white text-black text-sm font-medium tracking-wide uppercase hover:bg-gray-100 transition-colors">
+                <button className="px-6 py-3 bg-primary text-white text-sm font-heading font-medium tracking-wide uppercase hover:bg-primary-light transition-colors">
                   Subscribe
                 </button>
               </div>
