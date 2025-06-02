@@ -1,33 +1,30 @@
 // src/app/layout.js
-import { Montserrat, Open_Sans } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import React from 'react';
 import Script from 'next/script';
 import './globals.css';
 
 // Define fonts
-const montserrat = Montserrat({
+const poppins = Poppins({
   subsets: ['latin'],
-  variable: '--font-heading',
-  display: 'swap',
-});
-
-const openSans = Open_Sans({
-  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
   variable: '--font-body',
   display: 'swap',
 });
 
-const SITE_NAME = 'Rok Coaching';
+// Agrandir will be loaded via CSS @font-face
+
+const SITE_NAME = 'ROK Coaching';
 const BASE_URL = 'https://rok-coaching.co.uk';
-const OG_IMAGE_URL = `${BASE_URL}/images/Box-Logo.webp`;
-const TWITTER_HANDLE = '@YourTwitterHandle';
+const OG_IMAGE_URL = `${BASE_URL}/images/rok-logo.webp`;
+const TWITTER_HANDLE = '@RhondaOlsen';
 
 export const metadata = {
   title: 'ROK Coaching | Confidence to Lead. Power to Grow.',
   description:
     'ROK Coaching helps women unlock their boldest selves in business - with mentoring, strategy, and the belief they deserve to scale, lead, and thrive.',
   keywords:
-    'Women’s Business Coaching, Female Leadership Coach, Women Empowerment Coaching, Confidence Coaching for Women, Women in Leadership, Business Growth Mentor, Scale Your Business Women',
+    "Women's Business Coaching, Female Leadership Coach, Women Empowerment Coaching, Confidence Coaching for Women, Women in Leadership, Business Growth Mentor, Scale Your Business Women, Rhonda Olsen",
   metadataBase: new URL(BASE_URL),
   alternates: {
     canonical: BASE_URL,
@@ -47,7 +44,7 @@ export const metadata = {
         url: OG_IMAGE_URL,
         width: 1200,
         height: 1200,
-        alt: 'ROK Coaching',
+        alt: 'ROK Coaching - Confidence to Lead. Power to Grow.',
       },
     ],
     locale: 'en_GB',
@@ -71,7 +68,7 @@ export const metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  'theme-color': '#3C7A89',
+  'theme-color': '#50036C',
 };
 
 export default function RootLayout({ children }) {
@@ -95,9 +92,7 @@ export default function RootLayout({ children }) {
             `}
         </Script>
       </head>
-      <body
-        className={`${montserrat.variable} ${openSans.variable} font-body antialiased`}
-      >
+      <body className={`${poppins.variable} font-body antialiased`}>
         {children}
       </body>
     </html>

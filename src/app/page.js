@@ -1,3 +1,4 @@
+// src/app/page.js
 'use client';
 
 import React, { useEffect } from 'react';
@@ -5,8 +6,10 @@ import { motion } from 'framer-motion';
 
 import NavbarSection from '@/src/app/components/NavbarSection';
 import HeroSection from '@/src/app/components/mainPage/HeroSection';
+import AboutRhondaSection from '@/src/app/components/mainPage/AboutRhondaSection';
+import WhoIHelpSection from '@/src/app/components/mainPage/WhoIHelpSection';
 import ServicesSection from '@/src/app/components/mainPage/ServicesSection';
-import HowWeWorkSection from '@/src/app/components/mainPage/HowWeWorkSection';
+import TestimonialsSection from '@/src/app/components/mainPage/TestimonialsSection';
 import ContactSection from '@/src/app/components/mainPage/ContactSection';
 import FooterSection from '@/src/app/components/FooterSection';
 import SectionDivider from '@/src/app/components/SectionDivider';
@@ -33,7 +36,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-backgroundLight text-textDark overflow-hidden">
+    <main className="min-h-screen bg-light text-textDark overflow-hidden">
       {/* Initial loading animation for the whole page */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -41,35 +44,57 @@ export default function Home() {
         transition={{ duration: 0.6 }}
       >
         <NavbarSection />
-        <SectionDivider
-          variant="secondary-gradient"
-          height="6px"
-          className="my-4"
-        />
+
         <HeroSection />
+
         <SectionDivider
           variant="gradient"
           height="6px"
-          className="my-2"
+          className="my-0"
         />
-        <ServicesSection />
+
+        <div id="about">
+          <AboutRhondaSection />
+        </div>
+
         <SectionDivider
           variant="secondary-gradient"
           height="6px"
-          className="my-4"
+          className="my-0"
         />
-        <HowWeWorkSection />
+
+        <WhoIHelpSection />
+
+        <SectionDivider
+          variant="primary-gradient"
+          height="6px"
+          className="my-0"
+        />
+
+        <div id="services">
+          <ServicesSection />
+        </div>
+
+        <SectionDivider
+          variant="tertiary-gradient"
+          height="6px"
+          className="my-0"
+        />
+
+        <div id="testimonials">
+          <TestimonialsSection />
+        </div>
+
         <SectionDivider
           variant="gradient"
           height="6px"
-          className="my-2"
+          className="my-0"
         />
-        <ContactSection />
-        <SectionDivider
-          variant="secondary-gradient"
-          height="6px"
-          className="my-4"
-        />
+
+        <div id="contact">
+          <ContactSection />
+        </div>
+
         <FooterSection />
       </motion.div>
     </main>

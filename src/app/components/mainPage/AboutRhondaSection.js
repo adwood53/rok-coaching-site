@@ -1,3 +1,4 @@
+// src/app/components/mainPage/AboutRhondaSection.js
 'use client';
 
 import React from 'react';
@@ -50,9 +51,9 @@ export default function AboutRhondaSection() {
               {/* Quote overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6">
                 <p className="text-white text-lg font-medium italic">
-                  I&quot;m a woman who knows what it feels like to
-                  second-guess yourself, dim your light, or shrink
-                  your ambition to fit the room.
+                  &quot;I&apos;m a woman who knows what it feels like
+                  to second-guess yourself, dim your light, or shrink
+                  your ambition to fit the room.&quot;
                 </p>
               </div>
             </div>

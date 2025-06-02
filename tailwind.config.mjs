@@ -8,55 +8,59 @@ const tailwindConfig = {
   theme: {
     extend: {
       colors: {
-        // Primary Palette
-        primary: '#3C7A89',
-        'primary-light': '#5090A0',
-        'primary-dark': '#2C5A69',
+        // Primary Palette - Purple
+        primary: '#50036C',
+        'primary-light': '#7A35A0',
+        'primary-dark': '#3B0251',
 
-        // Secondary Palette
-        secondary: '#DB5461',
-        'secondary-light': '#E37883',
-        'secondary-dark': '#B9343F',
+        // Secondary Palette - Orange
+        secondary: '#FF514D',
+        'secondary-light': '#FF7A77',
+        'secondary-dark': '#CC413E',
 
-        // Tertiary Colors
-        tertiary: '#4C1E4F',
-        'tertiary-light': '#6C3E6F',
-        'tertiary-dark': '#3C0E3F',
+        // Tertiary Colors - Mulberry Smoke
+        tertiary: '#826466',
+        'tertiary-light': '#A08789',
+        'tertiary-dark': '#5F484A',
+
+        // Neutral Colors
+        neutral: '#D8D6D3',
+        'neutral-light': '#E8E7E5',
+        'neutral-dark': '#B8B5B1',
 
         // Background Colors
         light: '#FFFFFF',
-        warm: '#FEE1C7',
-        neutral: '#B5A886',
+        warm: '#F3E2DA',
+        cream: '#F3E2DA',
 
         // Text Colors
         dark: '#333333',
         light: '#FFFFFF',
         muted: '#666666',
 
-        // Backward compatibility
-        'db-red': '#DB5461',
-        purple: '#4C1E4F',
-        tan: '#B5A886',
-        cream: '#FEE1C7',
-        teal: '#3C7A89',
-
-        // Functional mappings
+        // Functional mappings for ROK Coaching
         backgroundLight: '#FFFFFF',
-        backgroundDark: '#4C1E4F',
-        accent: '#DB5461',
-        altPrimary: '#B5A886',
-        altAccent: '#805561',
+        backgroundDark: '#50036C',
+        accent: '#FF514D',
+        altPrimary: '#826466',
+        altAccent: '#D8D6D3',
         textLight: '#FFFFFF',
         textDark: '#333333',
         error: '#dc3d1c',
         confirm: '#3dc81c',
-        link: '#3C7A89',
-        darkCard: '#4C1E4F',
-        lightCard: '#FEE1C7',
+        link: '#50036C',
+        darkCard: '#50036C',
+        lightCard: '#F3E2DA',
+
+        // Backward compatibility mappings
+        'db-red': '#FF514D',
+        purple: '#50036C',
+        tan: '#826466',
+        teal: '#50036C',
       },
       fontFamily: {
-        heading: ['var(--font-heading)', 'sans-serif'],
-        body: ['var(--font-body)', 'sans-serif'],
+        heading: ['Agrandir', 'sans-serif'],
+        body: ['Poppins', 'sans-serif'],
       },
       borderRadius: {
         xl: '1rem',
@@ -64,6 +68,8 @@ const tailwindConfig = {
       },
       animation: {
         heartbeat: 'heartbeat 3s infinite',
+        fadeIn: 'fadeIn 0.6s ease forwards',
+        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         heartbeat: {
@@ -72,6 +78,16 @@ const tailwindConfig = {
           '28%': { transform: 'scale(1)' },
           '42%': { transform: 'scale(1.08)' },
           '70%': { transform: 'scale(1)' },
+        },
+        fadeIn: {
+          from: {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
         },
       },
     },

@@ -1,3 +1,4 @@
+// src/app/components/Logo.js
 'use client';
 
 import React from 'react';
@@ -14,18 +15,18 @@ export default function Logo({
   const variants = {
     default: {
       container: '',
-      textClass: `${baseTextClass} text-textLight`,
-      brandClass: 'text-primary',
+      textClass: `${baseTextClass} text-primary`,
+      brandClass: 'text-secondary',
     },
     light: {
       container: '',
-      textClass: `${baseTextClass} text-primary`,
-      brandClass: 'text-textDark',
+      textClass: `${baseTextClass} text-light`,
+      brandClass: 'text-secondary',
     },
     dark: {
       container: '',
-      textClass: `${baseTextClass} text-textDark`,
-      brandClass: 'text-primary',
+      textClass: `${baseTextClass} text-primary`,
+      brandClass: 'text-secondary',
     },
   };
 
@@ -48,51 +49,71 @@ export default function Logo({
     },
   };
 
-  const heartVariants = {
+  const logoVariants = {
     beat: {
-      scale: [1, 1.1, 1],
+      scale: [1, 1.05, 1],
       transition: {
         duration: 0.8,
         repeat: Infinity,
         repeatType: 'reverse',
-        repeatDelay: 2,
+        repeatDelay: 3,
       },
     },
   };
 
   return (
-    <Link href="/" className={`flex items-center gap-2 ${className}`}>
+    <Link href="/" className={`flex items-center gap-3 ${className}`}>
       <motion.div
-        className="relative w-10 h-10"
+        className="relative w-12 h-12"
         initial="hidden"
         animate={['visible', 'beat']}
-        variants={heartVariants}
+        variants={logoVariants}
       >
-        {/* Custom Heart + Care Icon */}
+        {/* ROK Icon - Crown/Leadership Symbol */}
         <svg
           viewBox="0 0 24 24"
           className="w-full h-full"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Heart */}
+          {/* Crown Base */}
           <motion.path
-            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-            fill="#DB5461"
+            d="M3 16h18v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2z"
+            fill="#50036C"
             variants={pathVariants}
           />
-          {/* Hands (care symbol) */}
+          {/* Crown Points */}
           <motion.path
-            d="M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6 5c-.55 0-1-.45-1-1v-1c0-1.1-.9-2-2-2h-6c-1.1 0-2 .9-2 2v1c0 .55-.45 1-1 1s-1-.45-1-1v-1c0-2.21 1.79-4 4-4h6c2.21 0 4 1.79 4 4v1c0 .55-.45 1-1 1z"
-            fill="#3C7A89"
+            d="M12 2l2 6-2 4-2-4 2-6z"
+            fill="#FF514D"
+            variants={pathVariants}
+          />
+          <motion.path
+            d="M6 4l1.5 8L4 16l-1-4 3-8z"
+            fill="#50036C"
+            variants={pathVariants}
+          />
+          <motion.path
+            d="M18 4l-1.5 8L20 16l1-4-3-8z"
+            fill="#50036C"
+            variants={pathVariants}
+          />
+          {/* Center Jewel */}
+          <motion.circle
+            cx="12"
+            cy="8"
+            r="1.5"
+            fill="#FF514D"
             variants={pathVariants}
           />
         </svg>
       </motion.div>
 
       <div className={textClass}>
-        <span className="text-xl">ICS</span>{' '}
-        <span className={`${brandClass} text-xl`}>Living</span>
+        <span className="text-2xl font-bold">ROK</span>{' '}
+        <span className={`${brandClass} text-xl font-medium`}>
+          Coaching
+        </span>
       </div>
     </Link>
   );
