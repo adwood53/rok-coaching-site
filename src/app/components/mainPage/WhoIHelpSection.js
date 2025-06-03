@@ -81,14 +81,14 @@ export default function WhoIHelpSection() {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="flex items-start gap-4 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="flex items-start gap-4 bg-white p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 <div className="text-3xl flex-shrink-0 mt-1">
                   {point.icon}
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                    <div className="w-6 h-6 bg-secondary flex items-center justify-center">
                       <svg
                         width="16"
                         height="16"
@@ -129,7 +129,7 @@ export default function WhoIHelpSection() {
             className="space-y-8"
           >
             {/* Image */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative overflow-hidden shadow-2xl">
               <Image
                 src="/images/photos/rhonda-headshots/3.jpg"
                 alt="ROK Coaching - Empowering Women Leaders"
@@ -143,7 +143,7 @@ export default function WhoIHelpSection() {
             {/* Quote Block */}
             <motion.div
               variants={fadeInUp}
-              className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-secondary"
+              className="bg-white p-8 shadow-xl border-l-4 border-secondary"
             >
               <div className="mb-4">
                 <svg
@@ -164,7 +164,7 @@ export default function WhoIHelpSection() {
                 know I had - and the plan to match it.
               </blockquote>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold">
                   M
                 </div>
                 <div>

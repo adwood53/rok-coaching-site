@@ -109,7 +109,7 @@ export default function TestimonialsSection() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="bg-white rounded-2xl shadow-2xl overflow-hidden"
+                  className="bg-white shadow-2xl overflow-hidden"
                 >
                   {/* Quote Section */}
                   <div className="p-8">
@@ -142,7 +142,7 @@ export default function TestimonialsSection() {
                         </div>
                       </div>
 
-                      <div className="bg-secondary text-white px-4 py-2 rounded-full text-sm font-semibold">
+                      <div className="bg-secondary text-white px-4 py-2 text-sm font-semibold">
                         {testimonials[activeTestimonial].result}
                       </div>
                     </div>

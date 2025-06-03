@@ -55,11 +55,7 @@ export default function NavbarSection() {
   return (
     <>
       <nav
-        className={`fixed w-full top-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm'
-            : 'bg-transparent'
-        }`}
+        className={`fixed w-full top-0 z-50 transition-all bg-white duration-500`}
       >
         <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           {/* Desktop Navigation */}
@@ -70,9 +66,7 @@ export default function NavbarSection() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-heading font-light tracking-wide uppercase transition-all duration-300 hover:opacity-60 ${
-                    isScrolled ? 'text-primary' : 'text-white'
-                  }`}
+                  className={`text-sm font-heading font-light tracking-wide uppercase transition-all duration-300 hover:opacity-60 text-primary`}
                 >
                   {item.name}
                 </Link>
@@ -81,7 +75,7 @@ export default function NavbarSection() {
 
             {/* Center – Logo */}
             <div className="flex-shrink-0">
-              <Logo variant={isScrolled ? 'default' : 'light'} />
+              <Logo variant={'default'} />
             </div>
 
             {/* Right – Navigation Links & CTA */}
@@ -90,9 +84,7 @@ export default function NavbarSection() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-heading font-light tracking-wide uppercase transition-all duration-300 hover:opacity-60 ${
-                    isScrolled ? 'text-primary' : 'text-white'
-                  }`}
+                  className={`text-sm font-heading font-light tracking-wide uppercase transition-all duration-300 hover:opacity-60 text-primary`}
                 >
                   {item.name}
                 </Link>
@@ -103,11 +95,7 @@ export default function NavbarSection() {
                 href="https://calendly.com/rhonda-rokcoaching"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-6 py-3 text-sm font-heading font-medium tracking-wide uppercase transition-all duration-300 ${
-                  isScrolled
-                    ? 'border border-primary text-primary hover:bg-primary hover:text-white'
-                    : 'border border-white text-white hover:bg-white hover:text-primary'
-                }`}
+                className={`px-6 py-3 text-sm font-heading font-medium tracking-wide uppercase transition-all duration-300 border border-primary text-primary hover:bg-primary hover:text-white`}
               >
                 Book Free Call
               </Link>
@@ -117,14 +105,12 @@ export default function NavbarSection() {
           {/* Mobile Navigation */}
           <div className="flex lg:hidden items-center justify-between py-4">
             {/* Mobile Logo */}
-            <Logo variant={isScrolled ? 'default' : 'light'} />
+            <Logo variant={'default'} />
 
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={toggleMenu}
-              className={`relative z-50 focus:outline-none transition-colors duration-300 ${
-                isScrolled ? 'text-primary' : 'text-white'
-              }`}
+              className={`relative z-50 focus:outline-none transition-colors duration-300 text-primary`}
               aria-label="Toggle menu"
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center">

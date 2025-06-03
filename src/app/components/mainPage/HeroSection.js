@@ -83,7 +83,7 @@ export default function HeroSection() {
     return (
       <div className="relative w-full h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block w-8 h-8 border border-gray-300 border-t-black rounded-full animate-spin mb-4"></div>
+          <div className="inline-block w-8 h-8 border border-gray-300 border-t-black animate-spin mb-4"></div>
         </div>
       </div>
     );

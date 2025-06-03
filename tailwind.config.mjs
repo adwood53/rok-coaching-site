@@ -8,74 +8,70 @@ const tailwindConfig = {
   theme: {
     extend: {
       colors: {
-        // Updated ROK Brand Colors - Red Primary, Gold Secondary, White Background
+        // ROK Brand Colors - Inheriting from CSS custom properties
         primary: {
-          DEFAULT: '#FF514D', // Red as primary
-          light: '#FF7A77',
-          dark: '#CC413E',
+          DEFAULT: 'var(--color-primary)',
+          light: 'var(--color-primary-light)',
+          dark: 'var(--color-primary-dark)',
         },
         secondary: {
-          DEFAULT: '#D4AF37', // Gold as secondary/accent
-          light: '#E6C866',
-          dark: '#B8941F',
-        },
-        accent: {
-          DEFAULT: '#D4AF37', // Gold accent
-          light: '#E6C866',
-          dark: '#B8941F',
+          DEFAULT: 'var(--color-secondary)',
+          light: 'var(--color-secondary-light)',
+          dark: 'var(--color-secondary-dark)',
         },
         tertiary: {
-          DEFAULT: '#826466',
-          light: '#A08789',
-          dark: '#5F484A',
+          DEFAULT: 'var(--color-tertiary)',
+          light: 'var(--color-tertiary-light)',
+          dark: 'var(--color-tertiary-dark)',
         },
         neutral: {
-          DEFAULT: '#D8D6D3',
-          light: '#E8E7E5',
-          dark: '#B8B5B1',
+          DEFAULT: 'var(--color-neutral)',
+          light: 'var(--color-neutral-light)',
+          dark: 'var(--color-neutral-dark)',
         },
 
-        // Background colors - White focused
-        warm: '#FFFFFF', // Changed to white
-        light: '#FFFFFF',
-        cream: '#FAFAFA', // Very light gray for subtle contrast
+        // Background colors
+        warm: 'var(--color-warm)',
+        backgroundLight: 'var(--color-background-light)',
+        backgroundDark: 'var(--color-background-dark)',
 
         // Text colors
-        backgroundLight: '#FFFFFF',
-        backgroundDark: '#FF514D', // Red for dark backgrounds
-        textLight: '#FFFFFF',
-        textDark: '#333333',
+        textLight: 'var(--color-text-light)',
+        textDark: 'var(--color-text-dark)',
 
         // Functional colors
-        error: '#dc3d1c',
-        confirm: '#3dc81c',
-        link: '#FF514D', // Red for links
+        accent: 'var(--color-accent)',
+        error: 'var(--color-error)',
+        confirm: 'var(--color-confirm)',
+        link: 'var(--color-link)',
 
-        // Keep existing names for compatibility but update colors
-        darkCard: '#FF514D', // Red
-        lightCard: '#FFFFFF', // White
-
-        // Monochrome for sharp contrast
-        black: '#000000',
-        white: '#ffffff',
+        // Monochrome colors - inheriting from CSS variables
+        black: 'var(--color-black)',
+        white: 'var(--color-white)',
         gray: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
+          50: 'var(--color-gray-50)',
+          100: 'var(--color-gray-100)',
+          200: 'var(--color-gray-200)',
+          300: 'var(--color-gray-300)',
+          400: 'var(--color-gray-400)',
+          500: 'var(--color-gray-500)',
+          600: 'var(--color-gray-600)',
+          700: 'var(--color-gray-700)',
+          800: 'var(--color-gray-800)',
+          900: 'var(--color-gray-900)',
         },
+
+        // Backward compatibility aliases
+        darkCard: 'var(--color-primary)',
+        lightCard: 'var(--color-warm)',
+        light: 'var(--color-background-light)',
+        cream: 'var(--color-warm)',
       },
 
       fontFamily: {
-        // ROK Brand Fonts
-        heading: ['Agrandir', 'sans-serif'],
-        body: ['Poppins', 'sans-serif'],
+        // ROK Brand Fonts - Inheriting from CSS variables
+        heading: 'var(--font-heading)',
+        body: 'var(--font-body)',
       },
 
       fontSize: {
@@ -95,12 +91,12 @@ const tailwindConfig = {
       },
 
       fontWeight: {
-        light: '300',
-        normal: '400',
-        medium: '500',
-        semibold: '600',
-        bold: '700',
-        extrabold: '800',
+        light: 'var(--font-weight-light)',
+        normal: 'var(--font-weight-regular)',
+        medium: 'var(--font-weight-medium)',
+        semibold: 'var(--font-weight-semibold)',
+        bold: 'var(--font-weight-bold)',
+        extrabold: 'var(--font-weight-extrabold)',
         black: '900',
       },
 
@@ -114,8 +110,19 @@ const tailwindConfig = {
       },
 
       spacing: {
+        1: 'var(--spacing-1)',
+        2: 'var(--spacing-2)',
+        3: 'var(--spacing-3)',
+        4: 'var(--spacing-4)',
+        6: 'var(--spacing-6)',
+        8: 'var(--spacing-8)',
+        12: 'var(--spacing-12)',
+        16: 'var(--spacing-16)',
         18: '4.5rem',
+        20: 'var(--spacing-20)',
         22: '5.5rem',
+        24: 'var(--spacing-24)',
+        32: 'var(--spacing-32)',
         88: '22rem',
         128: '32rem',
       },
@@ -126,15 +133,13 @@ const tailwindConfig = {
       },
 
       borderRadius: {
-        // NO ROUNDING - All set to 0 for sharp, fashion-forward aesthetic
         none: '0',
-        sm: '0',
-        md: '0',
-        lg: '0',
-        xl: '0',
-        '2xl': '0',
-        '3xl': '0',
-        DEFAULT: '0',
+        sm: '0.125rem',
+        md: '0.375rem',
+        lg: '0.5rem',
+        xl: '0.75rem',
+        '2xl': '1rem',
+        '3xl': '1.5rem',
       },
 
       animation: {
@@ -175,10 +180,12 @@ const tailwindConfig = {
       },
 
       boxShadow: {
-        soft: '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        medium:
-          '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        fashion: '0 20px 40px -10px rgba(255, 81, 77, 0.15)', // Red shadow
+        soft: 'var(--shadow-sm)',
+        medium: 'var(--shadow-base)',
+        fashion: 'var(--shadow-fashion)',
+        sm: 'var(--shadow-sm)',
+        base: 'var(--shadow-base)',
+        lg: 'var(--shadow-lg)',
       },
 
       backdropBlur: {

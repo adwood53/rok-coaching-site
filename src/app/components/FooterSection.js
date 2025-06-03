@@ -12,12 +12,12 @@ export default function FooterSection() {
   const isHomePage = pathname === '/';
 
   return (
-    <footer className="bg-gradient-to-br from-primary to-primary-dark text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-primary to-primary-dark text-blac relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-secondary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 right-20 w-40 h-40 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-tertiary rounded-full blur-2xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-secondary blur-3xl"></div>
+        <div className="absolute bottom-40 right-20 w-40 h-40 bg-white blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-tertiary blur-2xl"></div>
       </div>
 
       {/* Main Footer Content */}
@@ -26,8 +26,8 @@ export default function FooterSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Logo and Description */}
             <div className="lg:col-span-2">
-              <Logo variant="light" className="mb-6" />
-              <p className="text-lg text-white/90 mb-6 max-w-md leading-relaxed">
+              <Logo variant="default" className="mb-6" />
+              <p className="text-lg text-blac/90 mb-6 max-w-md leading-relaxed">
                 ROK Coaching helps women unlock their boldest selves
                 in business - with mentoring, strategy, and the belief
                 they deserve to scale, lead, and thrive.
@@ -92,7 +92,7 @@ export default function FooterSection() {
                 <li>
                   <Link
                     href={isHomePage ? '#about' : '/#about'}
-                    className="text-white/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
+                    className="text-blac/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
                   >
                     About Rhonda
                   </Link>
@@ -100,7 +100,7 @@ export default function FooterSection() {
                 <li>
                   <Link
                     href={isHomePage ? '#services' : '/#services'}
-                    className="text-white/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
+                    className="text-blac/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
                   >
                     Services
                   </Link>
@@ -110,7 +110,7 @@ export default function FooterSection() {
                     href={
                       isHomePage ? '#testimonials' : '/#testimonials'
                     }
-                    className="text-white/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
+                    className="text-blac/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
                   >
                     Client Stories
                   </Link>
@@ -118,7 +118,7 @@ export default function FooterSection() {
                 <li>
                   <Link
                     href={isHomePage ? '#contact' : '/#contact'}
-                    className="text-white/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
+                    className="text-blac/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
                   >
                     Contact
                   </Link>
@@ -135,7 +135,7 @@ export default function FooterSection() {
                 <li>
                   <Link
                     href="#contact"
-                    className="text-white/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
+                    className="text-blac/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
                   >
                     1:1 Empowerment Coaching
                   </Link>
@@ -143,7 +143,7 @@ export default function FooterSection() {
                 <li>
                   <Link
                     href="#contact"
-                    className="text-white/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
+                    className="text-blac/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
                   >
                     Strategy Days
                   </Link>
@@ -151,7 +151,7 @@ export default function FooterSection() {
                 <li>
                   <Link
                     href="#contact"
-                    className="text-white/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
+                    className="text-blac/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
                   >
                     Scale & Grow Mentorship
                   </Link>
@@ -159,7 +159,7 @@ export default function FooterSection() {
                 <li>
                   <Link
                     href="#contact"
-                    className="text-white/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
+                    className="text-blac/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
                   >
                     Confidence Club
                   </Link>
@@ -171,10 +171,10 @@ export default function FooterSection() {
           {/* Call to Action Section */}
           <div className="mt-16 pt-8 border-t border-white/20">
             <div className="text-center">
-              <h3 className="text-2xl font-heading font-bold text-white mb-4">
+              <h3 className="text-2xl font-heading font-bold text-blac mb-4">
                 Ready to Transform Your Leadership?
               </h3>
-              <p className="text-lg text-white/80 mb-6 max-w-2xl mx-auto">
+              <p className="text-lg text-blac/80 mb-6 max-w-2xl mx-auto">
                 Book a free 30-minute clarity call and let&apos;s
                 explore how ROK Coaching can help you unlock your
                 potential.
@@ -183,7 +183,7 @@ export default function FooterSection() {
                 href="https://calendly.com/rhonda-rokcoaching"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 rounded-xl font-heading font-semibold hover:bg-secondary-light hover:scale-105 transition-all shadow-lg"
+                className="inline-flex items-center gap-2 bg-secondary text-white text-blac px-8 py-4 font-heading font-semibold hover:bg-secondary-light hover:scale-105 transition-all shadow-lg"
               >
                 📅 Book Your Free Call
                 <svg
@@ -204,10 +204,10 @@ export default function FooterSection() {
       <div className="relative z-10 bg-primary-dark py-6">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-white/60 mb-4 md:mb-0">
+            <p className="text-sm text-blac/60 mb-4 md:mb-0">
               &copy; {year} ROK Coaching. All rights reserved.
             </p>
-            <div className="flex items-center gap-6 text-sm text-white/60">
+            <div className="flex items-center gap-6 text-sm text-blac/60">
               <span>Confidence | Growth | Leadership</span>
               <Link
                 href="/privacy-policy"

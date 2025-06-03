@@ -119,13 +119,6 @@ export default function ContactSection() {
       id="contact"
       className="py-20 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-secondary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 right-20 w-40 h-40 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-tertiary rounded-full blur-2xl"></div>
-      </div>
-
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           variants={staggerContainer}
@@ -136,13 +129,13 @@ export default function ContactSection() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl md:text-5xl font-heading font-bold text-white mb-6"
+            className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6"
           >
             Let&apos;s Build the Next Chapter — Together
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-xl text-white/90 max-w-3xl mx-auto"
+            className="text-xl text-black/90 max-w-3xl mx-auto"
           >
             Ready to unlock your potential? Let&apos;s have a
             conversation about where you are and where you want to be.
@@ -160,7 +153,7 @@ export default function ContactSection() {
               className="space-y-8"
             >
               {/* Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative overflow-hidden shadow-2xl">
                 <Image
                   src="/images/photos/rhonda-headshots/11.jpg"
                   alt="Rhonda Olsen - Let's Connect"
@@ -169,25 +162,25 @@ export default function ContactSection() {
                   className="object-cover w-full h-[400px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-2xl font-heading font-bold mb-2">
+                <div className="absolute bottom-6 left-6 text-primary">
+                  <h3 className="text-2xl text-white font-heading font-bold mb-2">
                     Ready to Begin?
                   </h3>
-                  <p className="text-lg opacity-90">
+                  <p className="text-lg text-white opacity-90">
                     Your transformation starts with a conversation.
                   </p>
                 </div>
               </div>
 
               {/* Contact Methods */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 space-y-6">
-                <h3 className="text-2xl font-heading font-bold text-white mb-4">
+              <div className="bg-white/10 backdrop-blur-sm p-6 space-y-6">
+                <h3 className="text-2xl font-heading font-bold text-black mb-4">
                   Get in Touch
                 </h3>
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white">
+                    <div className="w-12 h-12 bg-secondary flex items-center justify-center text-white">
                       <svg
                         width="24"
                         height="24"
@@ -199,7 +192,7 @@ export default function ContactSection() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-white">
+                      <p className="font-semibold text-black">
                         Email
                       </p>
                       <a
@@ -212,7 +205,7 @@ export default function ContactSection() {
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white">
+                    <div className="w-12 h-12 bg-secondary flex items-center justify-center text-white">
                       <svg
                         width="24"
                         height="24"
@@ -223,7 +216,7 @@ export default function ContactSection() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-white">
+                      <p className="font-semibold text-black">
                         LinkedIn
                       </p>
                       <a
@@ -242,7 +235,7 @@ export default function ContactSection() {
                       href="https://calendly.com/rhonda-rokcoaching"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-xl font-semibold hover:bg-secondary-light hover:scale-105 transition-all"
+                      className="inline-flex items-center gap-2 bg-secondary text-white px-6 py-3 font-semibold hover:bg-secondary-light hover:scale-105 transition-all"
                     >
                       📅 Book a 30-min Clarity Call
                     </Link>
@@ -257,9 +250,9 @@ export default function ContactSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-white rounded-2xl p-8 shadow-2xl"
+              className="bg-white p-8 shadow-2xl"
             >
-              <h3 className="text-2xl font-heading font-bold text-primary mb-6">
+              <h3 className="text-2xl text-black font-heading font-bold text-primary mb-6">
                 Send Me a Message
               </h3>
 
@@ -277,7 +270,7 @@ export default function ContactSection() {
                       type="text"
                       id="firstname"
                       name="firstname"
-                      className="w-full px-4 py-3 border-2 border-neutral rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body text-tertiary"
+                      className="w-full px-4 py-3 border-2 border-neutral focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body text-tertiary"
                       placeholder="Your first name"
                       required
                     />
@@ -293,7 +286,7 @@ export default function ContactSection() {
                       type="text"
                       id="lastname"
                       name="lastname"
-                      className="w-full px-4 py-3 border-2 border-neutral rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body text-tertiary"
+                      className="w-full px-4 py-3 border-2 border-neutral focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body text-tertiary"
                       placeholder="Your last name"
                       required
                     />
@@ -312,7 +305,7 @@ export default function ContactSection() {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-4 py-3 border-2 border-neutral rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body text-tertiary"
+                    className="w-full px-4 py-3 border-2 border-neutral focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body text-tertiary"
                     placeholder="your@email.com"
                     required
                   />
@@ -330,7 +323,7 @@ export default function ContactSection() {
                     type="text"
                     id="company"
                     name="company"
-                    className="w-full px-4 py-3 border-2 border-neutral rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body text-tertiary"
+                    className="w-full px-4 py-3 border-2 border-neutral focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body text-tertiary"
                     placeholder="Your business name"
                   />
                 </div>
@@ -346,7 +339,7 @@ export default function ContactSection() {
                   <select
                     id="reason"
                     name="reason"
-                    className="w-full px-4 py-3 border-2 border-neutral rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body bg-white text-tertiary"
+                    className="w-full px-4 py-3 border-2 border-neutral focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body bg-white text-tertiary"
                     value={selectedReason}
                     onChange={(e) =>
                       setSelectedReason(e.target.value)
@@ -373,7 +366,7 @@ export default function ContactSection() {
                     id="message"
                     name="message"
                     rows="4"
-                    className="w-full px-4 py-3 border-2 border-neutral rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body text-tertiary"
+                    className="w-full px-4 py-3 border-2 border-neutral focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body text-tertiary"
                     placeholder="Share your goals, challenges, or questions. The more you tell me, the better I can help you."
                     required
                   ></textarea>
@@ -382,7 +375,7 @@ export default function ContactSection() {
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full py-4 px-6 bg-gradient-to-r from-primary to-secondary text-white font-heading font-semibold rounded-xl hover:scale-105 transition-all shadow-lg"
+                  className="w-full py-4 px-6 bg-gradient-to-r from-primary to-secondary text-black border-black font-heading font-semibold hover:scale-105 transition-all shadow-lg"
                 >
                   Send Message
                 </button>
@@ -400,13 +393,13 @@ export default function ContactSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="text-center mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8"
+            className="text-center mt-16 bg-white/10 backdrop-blur-sm p-8"
           >
-            <p className="text-2xl font-heading italic text-white mb-4">
+            <p className="text-2xl font-heading italic text-primary mb-4">
               &quot;Your transformation starts with a single
               conversation.&quot;
             </p>
-            <p className="text-lg text-white/80">
+            <p className="text-lg text-primary/80">
               — Rhonda Olsen, ROK Coaching
             </p>
           </motion.div>
