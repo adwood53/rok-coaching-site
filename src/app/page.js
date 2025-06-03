@@ -44,32 +44,27 @@ export default function Home() {
       >
         <NavbarSection />
 
-        <HeroSection />
-
-        {/* Minimal Section Divider - Black line only */}
-        <div className="h-px bg-black max-w-screen-xl mx-auto" />
+        <div id="hero">
+          <HeroSection />
+        </div>
 
         <div id="about">
           <AboutRhondaSection />
         </div>
 
-        <div className="h-px bg-black max-w-screen-xl mx-auto" />
-
-        <WhoIHelpSection />
-
-        <div className="h-px bg-black max-w-screen-xl mx-auto" />
+        <div id="who">
+          <WhoIHelpSection />
+        </div>
 
         <div id="services">
           <ServicesSection />
         </div>
 
-        <div className="h-px bg-black max-w-screen-xl mx-auto" />
-
         <div id="testimonials">
           <TestimonialsSection />
         </div>
 
-        {/* Newsletter Section - White Background with Red Accents */}
+        {/* Newsletter Section - White Background with Red Accents
         <section className="py-16 bg-white border-t border-black">
           <div className="container max-w-2xl text-center">
             <motion.div
@@ -98,12 +93,15 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+        */}
 
         <div id="contact">
           <ContactSection />
         </div>
 
-        <FooterSection />
+        <div id="footer">
+          <FooterSection />
+        </div>
       </motion.div>
     </main>
   );

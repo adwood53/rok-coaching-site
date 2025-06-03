@@ -81,7 +81,7 @@ export default function HeroSection() {
 
   if (!isClient) {
     return (
-      <div className="relative w-full h-screen bg-gray-50 flex items-center justify-center">
+      <div className="relative w-full h-screen border-t bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <div className="inline-block w-8 h-8 border border-gray-300 border-t-black animate-spin mb-4"></div>
         </div>
@@ -90,7 +90,7 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden border-t">
       {/* Background Slides */}
       <AnimatePresence mode="wait">
         <motion.div

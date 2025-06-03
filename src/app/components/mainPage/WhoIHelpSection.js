@@ -26,29 +26,29 @@ export default function WhoIHelpSection() {
 
   const helpPoints = [
     {
-      icon: '🚀',
+      icon: '+',
       text: 'Have started something great - but want to scale it without losing themselves',
       highlight: 'scale it without losing themselves',
     },
     {
-      icon: '👑',
+      icon: '+',
       text: 'Are done playing small and ready to lead with purpose',
       highlight: 'ready to lead with purpose',
     },
     {
-      icon: '⚖️',
+      icon: '+',
       text: 'Want structure, strategy and self-belief in equal measure',
       highlight: 'structure, strategy and self-belief',
     },
     {
-      icon: '🌟',
+      icon: '+',
       text: 'Are building something bigger than a business - a legacy',
       highlight: 'building something bigger than a business',
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-warm to-neutral/10 relative overflow-hidden">
+    <section className="py-20 border-t bg-gradient-to-br from-primary/5 via-warm to-neutral/10 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-primary/5 to-transparent z-0"></div>
 
@@ -60,12 +60,13 @@ export default function WhoIHelpSection() {
           viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
-          <motion.h2
+          {/* Brand Label */}
+          <motion.p
             variants={fadeInUp}
-            className="text-4xl md:text-5xl font-heading font-bold text-primary mb-8"
+            className="text-xs font-medium tracking-[0.2em] uppercase text-gray-500"
           >
-            ROK is for Women Who...
-          </motion.h2>
+            ROK IS FOR WOMEN WHO...
+          </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

@@ -81,7 +81,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-20 lg:py-32 border-t">
       <div className="container max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -91,16 +91,17 @@ export default function ServicesSection() {
           viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16 lg:mb-24"
         >
+          {/* Brand Label */}
           <motion.p
             variants={fadeInUp}
-            className="text-xs font-medium tracking-[0.2em] uppercase text-gray-500 mb-4"
+            className="text-xs font-medium tracking-[0.2em] uppercase text-gray-500"
           >
-            Services
+            About the ROK Services
           </motion.p>
 
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl lg:text-5xl font-light leading-tight tracking-tight text-black mb-6"
+            className="text-3xl lg:text-5xl font-light leading-tight tracking-tight text-primary mb-6"
           >
             Ways to Work Together
           </motion.h2>
@@ -221,15 +222,22 @@ export default function ServicesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-center bg-white border-2 border-primary py-16 lg:py-20 px-8 lg:px-12"
+          className="text-center bg-white"
         >
-          <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-primary mb-6 leading-tight">
+          {/* Brand Label */}
+          <motion.p
+            variants={fadeInUp}
+            className="text-xs font-medium tracking-[0.2em] mb-2 uppercase text-gray-500"
+          >
             Ready to Unlock Your Potential?
-          </h3>
-          <p className="text-base font-light text-tertiary mb-8 max-w-2xl mx-auto leading-relaxed">
+          </motion.p>
+          <motion.p
+            variants={fadeInUp}
+            className="text-base font-light text-tertiary mb-8 max-w-2xl mx-auto leading-relaxed"
+          >
             Let&apos;s have a conversation about where you are and
             where you want to be.
-          </p>
+          </motion.p>
           <Link
             href="#contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-sm font-heading font-medium tracking-wide uppercase hover:bg-primary-light transition-all duration-300 min-w-[250px]"

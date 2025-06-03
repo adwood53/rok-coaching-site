@@ -35,7 +35,7 @@ export default function AboutRhondaSection() {
   };
 
   return (
-    <section className="py-20 lg:py-32 bg-white relative">
+    <section className="py-20 lg:py-32 border-t relative">
       <div className="container max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
           {/* Left Column - Image */}

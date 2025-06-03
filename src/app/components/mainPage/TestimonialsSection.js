@@ -62,7 +62,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-warm to-neutral/10 relative overflow-hidden">
+    <section className="py-20 border-t bg-gradient-to-br from-primary/5 via-warm to-neutral/10 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-primary/10 to-transparent z-0"></div>
 
@@ -77,6 +77,12 @@ export default function TestimonialsSection() {
           }}
           className="text-center mb-16"
         >
+          <motion.p
+            variants={fadeInUp}
+            className="text-xs font-medium tracking-[0.2em] mb-2 uppercase text-gray-500"
+          >
+            Where you will get to...
+          </motion.p>
           <motion.h2
             variants={fadeInUp}
             className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6"

@@ -12,7 +12,7 @@ export default function FooterSection() {
   const isHomePage = pathname === '/';
 
   return (
-    <footer className="bg-gradient-to-br from-primary to-primary-dark text-black border-t relative overflow-hidden">
+    <footer className="bg-gradient-to-br text-black border-t relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-32 h-32 bg-secondary blur-3xl"></div>
         <div className="absolute bottom-40 right-20 w-40 h-40 bg-white blur-3xl"></div>
@@ -21,7 +21,7 @@ export default function FooterSection() {
       {/* Main Footer Content */}
       <div className="relative z-10 py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Quick Links */}
             <div>
               <ul className="space-y-3">
@@ -103,7 +103,7 @@ export default function FooterSection() {
         </div>
       </div>
       {/* Bottom Footer Bar */}
-      <div className="relative z-10 bg-primary-dark py-6">
+      <div className="relative z-10 py-6">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-xs text-black/60 mb-4 md:mb-0">

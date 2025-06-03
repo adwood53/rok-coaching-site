@@ -117,7 +117,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden"
+      className="py-20 bg-gradient-to-br relative overflow-hidden"
     >
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -127,18 +127,11 @@ export default function ContactSection() {
           viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
-          <motion.h2
-            variants={fadeInUp}
-            className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6"
-          >
-            Let&apos;s Build the Next Chapter — Together
-          </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-xl text-black/90 max-w-3xl mx-auto"
+            className="text-xs font-medium tracking-[0.2em] mb-2 uppercase text-gray-500"
           >
-            Ready to unlock your potential? Let&apos;s have a
-            conversation about where you are and where you want to be.
+            Taking the first step
           </motion.p>
         </motion.div>
 
@@ -164,18 +157,18 @@ export default function ContactSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-primary">
                   <h3 className="text-2xl text-white font-heading font-bold mb-2">
-                    Ready to Begin?
+                    READY TO BEGIN?
                   </h3>
                   <p className="text-lg text-white opacity-90">
-                    Your transformation starts with a conversation.
+                    YOUR TRANSFORMATION STARTS WITH A CONVERSATION
                   </p>
                 </div>
               </div>
 
               {/* Contact Methods */}
               <div className="bg-white/10 backdrop-blur-sm p-6 space-y-6">
-                <h3 className="text-2xl font-heading font-bold text-black mb-4">
-                  Get in Touch
+                <h3 className="text-lG font-heading font-bold text-black mb-4">
+                  GET IN TOUCH
                 </h3>
 
                 <div className="space-y-4">
@@ -199,7 +192,7 @@ export default function ContactSection() {
                         href="mailto:rhonda@rokcoaching.com"
                         className="text-secondary hover:text-secondary-light transition-colors"
                       >
-                        rhonda@rokcoaching.com
+                        rhonda@rok-coaching.co.uk
                       </a>
                     </div>
                   </div>
@@ -375,7 +368,7 @@ export default function ContactSection() {
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full py-4 px-6 bg-gradient-to-r from-primary to-secondary text-black border-black font-heading font-semibold hover:scale-105 transition-all shadow-lg"
+                  className="w-full py-4 px-6 bg-gradient-to-r bg-white text-black border-black font-heading font-semibold hover:scale-105 transition-all shadow-lg"
                 >
                   Send Message
                 </button>
@@ -399,8 +392,8 @@ export default function ContactSection() {
               &quot;Your transformation starts with a single
               conversation.&quot;
             </p>
-            <p className="text-lg text-primary/80">
-              — Rhonda Olsen, ROK Coaching
+            <p className="text-m text-black/80">
+              — RHONDA OLSEN, ROK COACHING
             </p>
           </motion.div>
         </div>
