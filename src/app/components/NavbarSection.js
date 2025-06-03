@@ -55,7 +55,7 @@ export default function NavbarSection() {
   return (
     <>
       <nav
-        className={`fixed w-full top-0 z-50 transition-all bg-white duration-500`}
+        className={`fixed w-full top-0 z-50 transition-all border-b border-primary to-primary-dark bg-white duration-500`}
       >
         <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           {/* Desktop Navigation */}
@@ -193,7 +193,7 @@ export default function NavbarSection() {
                   className="flex items-center space-x-6 pt-8"
                 >
                   <a
-                    href="mailto:rhonda@rokcoaching.com"
+                    href="mailto:rhonda@rok-coaching.com"
                     className="text-primary hover:text-secondary transition-colors duration-300"
                     aria-label="Email Rhonda"
                   >
@@ -209,7 +209,7 @@ export default function NavbarSection() {
                   </a>
 
                   <a
-                    href="https://linkedin.com/in/rhondaolsen"
+                    href="https://www.linkedin.com/in/rhonda-olsen-gms-16165116/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:text-secondary transition-colors duration-300"

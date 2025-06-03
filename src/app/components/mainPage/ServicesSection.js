@@ -30,7 +30,7 @@ export default function ServicesSection() {
       title: '1:1 Empowerment Coaching',
       subtitle:
         'Deep coaching to rediscover your confidence, map your goals, and own your brilliance.',
-      image: '/images/photos/rhonda-headshots/4.jpg',
+      image: '/images/photos/4.png',
       features: [
         'Personal confidence building',
         'Goal mapping & strategy',
@@ -43,7 +43,7 @@ export default function ServicesSection() {
       title: 'Strategy Days',
       subtitle:
         'Focused time to rewire your offer, brand or leadership strategy - and leave recharged.',
-      image: '/images/photos/rhonda-headshots/5.jpg',
+      image: '/images/photos/3.png',
       features: [
         'Brand positioning',
         'Offer optimization',
@@ -56,7 +56,7 @@ export default function ServicesSection() {
       title: 'Scale & Grow Mentorship',
       subtitle:
         'For ambitious founders ready to take their business global - with structure, support and soul.',
-      image: '/images/photos/rhonda-headshots/6.jpg',
+      image: '/images/photos/2.png',
       features: [
         'Global expansion strategy',
         'Team leadership',
@@ -68,7 +68,7 @@ export default function ServicesSection() {
     {
       title: 'Confidence Club',
       subtitle: 'A space for women to rise together.',
-      image: '/images/photos/rhonda-headshots/7.jpg',
+      image: '/images/photos/1.png',
       features: [
         'Group mentorship',
         'Peer support network',
@@ -81,7 +81,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-32 border-t">
+    <section className="py-20 lg:py-32 border-t border-primary">
       <div className="container max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -126,7 +126,7 @@ export default function ServicesSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.1 }}
-              className="group relative bg-white overflow-hidden hover:shadow-fashion transition-all duration-700"
+              className="group relative bg-primary overflow-hidden hover:shadow-fashion transition-all duration-700"
             >
               {/* Image */}
               <div className="relative aspect-[4/5] overflow-hidden">
@@ -161,12 +161,12 @@ export default function ServicesSection() {
               {/* Content */}
               <div className="p-8 lg:p-10">
                 {/* Title */}
-                <h3 className="text-xl lg:text-2xl font-light text-black mb-4 leading-tight">
+                <h3 className="text-xl lg:text-2xl font-light text-white mb-4 leading-tight">
                   {service.title}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-sm lg:text-base font-light text-gray-600 mb-6 leading-relaxed">
+                <p className="text-sm lg:text-base font-light text-gray-200 mb-6 leading-relaxed">
                   {service.subtitle}
                 </p>
 
@@ -175,9 +175,9 @@ export default function ServicesSection() {
                   {service.features.map((feature, i) => (
                     <div
                       key={i}
-                      className="flex items-center text-xs text-gray-500"
+                      className="flex items-center text-xs text-gray-100"
                     >
-                      <div className="w-1 h-1 bg-black mr-2 flex-shrink-0" />
+                      <div className="w-1 h-1 bg-white mr-2 flex-shrink-0" />
                       {feature}
                     </div>
                   ))}
@@ -189,7 +189,7 @@ export default function ServicesSection() {
                   className={`inline-flex items-center text-sm font-medium tracking-wide uppercase transition-all duration-300 ${
                     service.comingSoon
                       ? 'text-gray-400 cursor-not-allowed'
-                      : 'text-black hover:text-gray-600 group'
+                      : 'text-white hover:text-gray-400 group'
                   }`}
                 >
                   {service.comingSoon

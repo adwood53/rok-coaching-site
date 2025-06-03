@@ -5,6 +5,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function AboutRhondaSection() {
   const fadeInUp = {
@@ -34,8 +35,15 @@ export default function AboutRhondaSection() {
     },
   };
 
+  const [randomHeadshot, setRandomHeadshot] = React.useState(1);
+  useEffect(() => {
+    // Randomly select a headshot from 1-13
+    const randomNum = Math.floor(Math.random() * 13) + 1;
+    setRandomHeadshot(randomNum);
+  }, []);
+
   return (
-    <section className="py-20 lg:py-32 border-t relative">
+    <section className="py-20 lg:py-32 border-t border-primary relative">
       <div className="container max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
           {/* Left Column - Image */}
@@ -48,7 +56,7 @@ export default function AboutRhondaSection() {
           >
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
-                src="/images/photos/rhonda-headshots/2.jpg"
+                src={`/images/photos/rhonda-headshots/${randomHeadshot}.jpg`}
                 alt="Rhonda Olsen - ROK Coaching Founder"
                 fill
                 className="object-cover object-center transition-transform duration-700 hover:scale-105"

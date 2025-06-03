@@ -17,7 +17,7 @@ export default function HeroSection() {
   const slides = [
     {
       id: 1,
-      image: '/images/photos/rhonda-headshots/1.jpg',
+      image: '/images/photos/8.png',
       title: 'Confidence to Lead.',
       subtitle: 'Power to Grow.',
       description:
@@ -29,7 +29,7 @@ export default function HeroSection() {
     },
     {
       id: 2,
-      image: '/images/photos/rhonda-headshots/2.jpg',
+      image: '/images/photos/7.png',
       title: "I've Been Where You Are.",
       subtitle: "That's Why I Built ROK.",
       description:
@@ -41,7 +41,7 @@ export default function HeroSection() {
     },
     {
       id: 3,
-      image: '/images/photos/rhonda-headshots/3.jpg',
+      image: '/images/photos/6.png',
       title: 'Ways to Work Together',
       subtitle:
         '1:1 Coaching • Strategy Days • Scale & Grow Mentorship',
@@ -60,7 +60,7 @@ export default function HeroSection() {
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 15000);
 
     return () => clearInterval(timer);
   }, [slides.length, isClient]);
@@ -90,7 +90,7 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="relative w-full h-screen overflow-hidden border-t">
+    <div className="relative w-full h-screen overflow-hidden border-t border-primary">
       {/* Background Slides */}
       <AnimatePresence mode="wait">
         <motion.div

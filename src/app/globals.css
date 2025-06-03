@@ -4,12 +4,48 @@
 /* Import Tailwind v4 */
 @import "tailwindcss";
 
-/* Agrandir font will be loaded via CSS @font-face */
+/* Agrandir font - Complete font-face setup */
+@font-face {
+  font-family: 'Agrandir';
+  src: url('/fonts/Agrandir-Thin.woff2') format('woff2'),
+       url('/fonts/Agrandir-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url('/fonts/Agrandir-Light.woff2') format('woff2'),
+       url('/fonts/Agrandir-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Agrandir';
   src: url('/fonts/Agrandir-Regular.woff2') format('woff2'),
        url('/fonts/Agrandir-Regular.woff') format('woff');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url('/fonts/Agrandir-Medium.woff2') format('woff2'),
+       url('/fonts/Agrandir-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url('/fonts/Agrandir-Semibold.woff2') format('woff2'),
+       url('/fonts/Agrandir-Semibold.woff') format('woff');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -22,6 +58,25 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url('/fonts/Agrandir-Extrabold.woff2') format('woff2'),
+       url('/fonts/Agrandir-Extrabold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url('/fonts/Agrandir-Black.woff2') format('woff2'),
+       url('/fonts/Agrandir-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 /* Tailwind v4 Theme Configuration */
 @theme {

@@ -117,7 +117,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br relative overflow-hidden"
+      className="py-20 bg-gradient-to-br border-t border-primary relative overflow-hidden"
     >
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -148,7 +148,7 @@ export default function ContactSection() {
               {/* Image */}
               <div className="relative overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/photos/rhonda-headshots/11.jpg"
+                  src="/images/photos/8.png"
                   alt="Rhonda Olsen - Let's Connect"
                   width={500}
                   height={400}
@@ -189,10 +189,10 @@ export default function ContactSection() {
                         Email
                       </p>
                       <a
-                        href="mailto:rhonda@rokcoaching.com"
+                        href="mailto:rhonda@rok-coaching.com"
                         className="text-secondary hover:text-secondary-light transition-colors"
                       >
-                        rhonda@rok-coaching.co.uk
+                        rhonda@rok-coaching.com
                       </a>
                     </div>
                   </div>
@@ -213,7 +213,7 @@ export default function ContactSection() {
                         LinkedIn
                       </p>
                       <a
-                        href="https://linkedin.com/in/rhondaolsen"
+                        href="https://www.linkedin.com/in/rhonda-olsen-gms-16165116/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-secondary hover:text-secondary-light transition-colors"
@@ -245,7 +245,7 @@ export default function ContactSection() {
               viewport={{ once: true, amount: 0.3 }}
               className="bg-white p-8 shadow-2xl"
             >
-              <h3 className="text-2xl text-black font-heading font-bold text-primary mb-6">
+              <h3 className="text-2xl font-heading font-bold text-primary mb-6">
                 Send Me a Message
               </h3>
 

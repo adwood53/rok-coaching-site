@@ -2,6 +2,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -20,91 +21,40 @@ export default function Logo({
     },
   };
 
-  const iconVariants = {
-    hover: {
-      rotate: 90,
-      transition: {
-        duration: 0.3,
-        ease: 'easeInOut',
-      },
-    },
-  };
+  // Determine logo source based on variant
+  let logoSrc;
+  if (variant === 'dark') {
+    logoSrc = '/images/box-logo-dark.png';
+  } else if (variant === 'light') {
+    logoSrc = '/images/box-logo-light.png';
+  } else if (variant === 'default') {
+    logoSrc = '/images/logo.png';
+  } else {
+    logoSrc = '/images/box-logo-light.png'; // fallback
+  }
 
   return (
     <Link href="/" className={`flex items-center ${className}`}>
       <motion.div
-        className="flex items-center space-x-3"
+        //relative to fit image height but w-32 always
+        className="relative w-32 h-full"
         variants={logoVariants}
         whileHover="hover"
       >
-        {/* ROK Crown Icon - Simplified for Fashion Aesthetic */}
-        <div className="relative w-10 h-10">
-          <svg
-            viewBox="0 0 24 24"
-            className="w-full h-full"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Crown Base */}
-            <motion.path
-              d="M3 16h18v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2z"
-              fill={
-                variant === 'light' ? '#ffffff' : '#FF514D'
-              } /* Red instead of purple */
-              variants={iconVariants}
-            />
-            {/* Crown Points */}
-            <motion.path
-              d="M12 2l2 6-2 4-2-4 2-6z"
-              fill={
-                variant === 'light' ? '#ffffff' : '#D4AF37'
-              } /* Gold accent */
-              variants={iconVariants}
-            />
-            <motion.path
-              d="M6 4l1.5 8L4 16l-1-4 3-8z"
-              fill={
-                variant === 'light' ? '#ffffff' : '#FF514D'
-              } /* Red */
-              variants={iconVariants}
-            />
-            <motion.path
-              d="M18 4l-1.5 8L20 16l1-4-3-8z"
-              fill={
-                variant === 'light' ? '#ffffff' : '#FF514D'
-              } /* Red */
-              variants={iconVariants}
-            />
-            {/* Center Jewel */}
-            <motion.circle
-              cx="12"
-              cy="8"
-              r="1.5"
-              fill={
-                variant === 'light' ? '#ffffff' : '#D4AF37'
-              } /* Gold accent */
-              variants={iconVariants}
-            />
-          </svg>
-        </div>
-
-        {/* Brand Text - ROK Brand Typography */}
-        <div
-          className={`font-heading transition-colors duration-300 ${
-            variant === 'light' ? 'text-white' : 'text-primary'
-          }`}
-        >
-          <span className="text-2xl font-bold tracking-tight">
-            ROK
-          </span>
-          <span
-            className={`text-xl font-medium ml-2 ${
-              variant === 'light' ? 'text-white' : 'text-secondary'
-            }`}
-          >
-            Coaching
-          </span>
-        </div>
+        <Image
+          src={logoSrc}
+          alt="ROK Coaching Logo"
+          //if the logo is light or dark, its 128 x 128, otherwise 128 x 64
+          width={128}
+          height={
+            logoSrc.includes('box-logo-light') ||
+            logoSrc.includes('box-logo-dark')
+              ? 128
+              : 64
+          }
+          className="object-contain"
+          priority
+        />
       </motion.div>
     </Link>
   );

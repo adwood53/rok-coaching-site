@@ -47,7 +47,7 @@ export default function PrivacyPolicy() {
         />
 
         {/* Hero Section */}
-        <section className="py-20 lg:py-32 bg-gradient-to-br from-primary/5 to-warm">
+        <section className="py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-primary/20 to-primary/5">
           <div className="container max-w-4xl mx-auto px-6 lg:px-8">
             <motion.div
               variants={staggerContainer}
@@ -92,7 +92,7 @@ export default function PrivacyPolicy() {
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.1 }}
               className="space-y-12"
             >
               {/* Introduction */}
@@ -107,7 +107,7 @@ export default function PrivacyPolicy() {
                   we collect, use, and share it.
                 </p>
                 <p className="text-tertiary leading-relaxed text-base mt-4">
-                  <strong>Contact:</strong> rhonda@rokcoaching.com
+                  <strong>Contact:</strong> rhonda@rok-coaching.com
                 </p>
               </motion.div>
 
@@ -253,7 +253,7 @@ export default function PrivacyPolicy() {
                 </div>
                 <p className="text-tertiary leading-relaxed text-base mt-4">
                   To exercise these rights, contact us at
-                  rhonda@rokcoaching.com
+                  rhonda@rok-coaching.com
                 </p>
               </motion.div>
 
@@ -336,7 +336,7 @@ export default function PrivacyPolicy() {
                 <div className="space-y-2">
                   <p className="text-tertiary text-base">
                     <strong className="text-primary">Email:</strong>{' '}
-                    rhonda@rokcoaching.com
+                    rhonda@rok-coaching.com
                   </p>
                   <p className="text-tertiary text-base">
                     <strong className="text-primary">Website:</strong>{' '}

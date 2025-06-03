@@ -48,7 +48,7 @@ export default function WhoIHelpSection() {
   ];
 
   return (
-    <section className="py-20 border-t bg-gradient-to-br from-primary/5 via-warm to-neutral/10 relative overflow-hidden">
+    <section className="py-20 border-t border-primary bg-gradient-to-br from-primary/5 via-primary/20 to-neutral/10 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-primary/5 to-transparent z-0"></div>
 
@@ -132,7 +132,7 @@ export default function WhoIHelpSection() {
             {/* Image */}
             <div className="relative overflow-hidden shadow-2xl">
               <Image
-                src="/images/photos/rhonda-headshots/3.jpg"
+                src="/images/photos/5.png"
                 alt="ROK Coaching - Empowering Women Leaders"
                 width={500}
                 height={400}

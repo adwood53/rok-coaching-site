@@ -14,7 +14,7 @@ export default function TestimonialsSection() {
         'Working with Rhonda changed how I saw myself. I went from tentative founder to confident CEO.',
       author: 'Maya',
       role: 'Tech Startup Founder',
-      image: '/images/photos/rhonda-headshots/8.jpg',
+      image: '/images/photos/4.png',
       result: 'Scaled team from 3 to 15 people',
       color: 'primary',
     },
@@ -23,7 +23,7 @@ export default function TestimonialsSection() {
         "I'd spent years helping others but forgot about me. Rhonda helped me find my power again.",
       author: 'Aisha',
       role: 'Service-Based Entrepreneur',
-      image: '/images/photos/rhonda-headshots/9.jpg',
+      image: '/images/photos/2.png',
       result: 'Doubled revenue in 6 months',
       color: 'secondary',
     },
@@ -32,7 +32,7 @@ export default function TestimonialsSection() {
         "Rhonda doesn't just coach - she sees you. She believed in my vision when I couldn't.",
       author: 'Sarah',
       role: 'Creative Director',
-      image: '/images/photos/rhonda-headshots/10.jpg',
+      image: '/images/photos/6.png',
       result: 'Launched dream agency',
       color: 'tertiary',
     },
@@ -62,7 +62,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 border-t bg-gradient-to-br from-primary/5 via-warm to-neutral/10 relative overflow-hidden">
+    <section className="py-20 border-t  border-primary bg-gradient-to-br from-primary/5 via-primary/20 to-neutral/10 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-primary/10 to-transparent z-0"></div>
 

@@ -12,7 +12,7 @@ export default function FooterSection() {
   const isHomePage = pathname === '/';
 
   return (
-    <footer className="bg-gradient-to-br text-black border-t relative overflow-hidden">
+    <footer className="bg-gradient-to-br text-black border-t border-primary relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-32 h-32 bg-secondary blur-3xl"></div>
         <div className="absolute bottom-40 right-20 w-40 h-40 bg-white blur-3xl"></div>
