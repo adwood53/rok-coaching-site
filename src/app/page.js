@@ -56,44 +56,13 @@ export default function Home() {
           <WhoIHelpSection />
         </div>
 
-        <div id="services">
+        <div id="how-i-help">
           <ServicesSection />
         </div>
 
         <div id="testimonials">
           <TestimonialsSection />
         </div>
-
-        {/* Newsletter Section - White Background with Red Accents
-        <section className="py-16 bg-white border-t border-black">
-          <div className="container max-w-2xl text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h3 className="text-2xl font-heading font-semibold tracking-wide text-primary mb-4">
-                Stay Connected
-              </h3>
-              <p className="text-sm text-tertiary mb-8 font-light">
-                Join our newsletter for insights on leadership,
-                confidence, and growth.
-              </p>
-              <div className="flex max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-white border border-gray-300 text-black placeholder-gray-500 focus:border-primary focus:outline-none text-sm"
-                />
-                <button className="px-6 py-3 bg-primary text-white text-sm font-heading font-medium tracking-wide uppercase hover:bg-primary-light transition-colors">
-                  Subscribe
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-        */}
 
         <div id="contact">
           <ContactSection />

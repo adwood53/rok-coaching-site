@@ -30,8 +30,8 @@ export default function NavbarSection() {
       href: isHomePage ? '#about' : '/#about',
     },
     {
-      name: 'Services',
-      href: isHomePage ? '#services' : '/#services',
+      name: 'How I Help',
+      href: isHomePage ? '#how-i-help' : '/#how-i-help',
     },
     {
       name: 'Testimonials',
@@ -95,7 +95,9 @@ export default function NavbarSection() {
                 href="https://calendly.com/rhonda-rokcoaching"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-6 py-3 text-sm font-heading font-medium tracking-wide uppercase transition-all duration-300 border border-primary text-primary hover:bg-primary hover:text-white`}
+                className={
+                  'px-6 py-3 text-sm font-heading font-medium tracking-wide uppercase transition-all duration-300 border border-primary text-primary hover:bg-primary hover:!text-white'
+                }
               >
                 Book Free Call
               </Link>

@@ -132,7 +132,7 @@ export default function WhoIHelpSection() {
             {/* Image */}
             <div className="relative overflow-hidden shadow-2xl">
               <Image
-                src="/images/photos/5.png"
+                src="/images/photos/1.png"
                 alt="ROK Coaching - Empowering Women Leaders"
                 width={500}
                 height={400}

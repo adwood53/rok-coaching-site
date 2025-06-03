@@ -25,6 +25,15 @@ export default function ServicesSection() {
     },
   };
 
+  // Hover animation for cards
+  const cardHover = {
+    y: -8,
+    transition: {
+      duration: 0.3,
+      ease: 'easeOut',
+    },
+  };
+
   const services = [
     {
       title: '1:1 Empowerment Coaching',
@@ -82,7 +91,7 @@ export default function ServicesSection() {
 
   return (
     <section className="py-20 lg:py-32 border-t border-primary">
-      <div className="container max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="container max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           variants={staggerContainer}
@@ -117,7 +126,7 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -126,10 +135,11 @@ export default function ServicesSection() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.1 }}
-              className="group relative bg-primary overflow-hidden hover:shadow-fashion transition-all duration-700"
+              whileHover={cardHover}
+              className="group relative bg-primary overflow-hidden hover:shadow-fashion transition-shadow duration-700"
             >
-              {/* Image */}
-              <div className="relative aspect-[4/5] overflow-hidden">
+              {/* Image - 1:1 Square Aspect Ratio */}
+              <div className="relative w-[100%] aspect-[1/1] overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -137,17 +147,14 @@ export default function ServicesSection() {
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   quality={90}
                 />
-
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
                 {/* Category Label */}
                 <div className="absolute top-6 left-6">
                   <span className="inline-block px-3 py-1 bg-white/90 text-black text-xs font-medium tracking-wide uppercase">
                     {service.category}
                   </span>
                 </div>
-
                 {/* Coming Soon Badge */}
                 {service.comingSoon && (
                   <div className="absolute top-6 right-6">
