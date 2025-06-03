@@ -1,9 +1,11 @@
-// tailwind.config.mjs
 /** @type {import('tailwindcss').Config} */
 const tailwindConfig = {
   content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}', // This covers all files in src directory
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/components/**/*.{js,ts,jsx,tsx,mdx}', // Your components are here
+    './pages/**/*.{js,ts,jsx,tsx,mdx}', // In case you add pages directory
+    './components/**/*.{js,ts,jsx,tsx,mdx}', // In case you move components
   ],
   theme: {
     extend: {
@@ -75,6 +77,7 @@ const tailwindConfig = {
       },
 
       fontSize: {
+        xxs: '0.625rem',
         xs: '0.75rem',
         sm: '0.875rem',
         base: '1rem',
