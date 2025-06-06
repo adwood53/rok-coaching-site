@@ -84,9 +84,6 @@ export default function WhoIHelpSection() {
                 variants={fadeInUp}
                 className="flex items-start gap-4 bg-white p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                <div className="text-3xl flex-shrink-0 mt-1">
-                  {point.icon}
-                </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-6 h-6 bg-secondary flex items-center justify-center">
