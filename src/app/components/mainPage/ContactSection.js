@@ -5,7 +5,6 @@ import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useSearchParams } from 'next/navigation';
 
 // Centralized email configuration
 const CONTACT_EMAIL = 'rhonda@rok-coaching.com';
@@ -17,13 +16,14 @@ export default function ContactSection() {
 
   // Check for success parameter from FormSubmit redirect
   useEffect(() => {
-    if (searchParams.get('success') === 'true') {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
       setShowSuccessMessage(true);
       // Remove the success parameter from URL after showing message
       window.history.replaceState(
         {},
         document.title,
-        window.location.pathname
+        window.location.pathname + window.location.hash
       );
 
       // Auto-hide success message after 5 seconds
@@ -31,7 +31,7 @@ export default function ContactSection() {
         setShowSuccessMessage(false);
       }, 5000);
     }
-  }, [searchParams]);
+  }, []);
 
   // No custom form handler needed - FormSubmit handles everything
 
