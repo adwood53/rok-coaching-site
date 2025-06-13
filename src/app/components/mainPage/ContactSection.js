@@ -1,7 +1,7 @@
 // src/app/components/mainPage/ContactSection.js
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -11,29 +11,6 @@ const CONTACT_EMAIL = 'rhonda@rok-coaching.com';
 
 export default function ContactSection() {
   const [selectedReason, setSelectedReason] = useState('');
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const searchParams = useSearchParams();
-
-  // Check for success parameter from FormSubmit redirect
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === 'true') {
-      setShowSuccessMessage(true);
-      // Remove the success parameter from URL after showing message
-      window.history.replaceState(
-        {},
-        document.title,
-        window.location.pathname + window.location.hash
-      );
-
-      // Auto-hide success message after 5 seconds
-      setTimeout(() => {
-        setShowSuccessMessage(false);
-      }, 5000);
-    }
-  }, []);
-
-  // No custom form handler needed - FormSubmit handles everything
 
   // Define reasons for the dropdown
   const reasons = [
@@ -118,7 +95,7 @@ export default function ContactSection() {
 
               {/* Contact Methods */}
               <div className="bg-white/10 backdrop-blur-sm p-6 space-y-6">
-                <h3 className="text-lG font-heading font-bold text-black mb-4">
+                <h3 className="text-lg font-heading font-bold text-black mb-4">
                   GET IN TOUCH
                 </h3>
 
@@ -200,38 +177,6 @@ export default function ContactSection() {
                 Send Me a Message
               </h3>
 
-              {/* Success Message */}
-              {showSuccessMessage && (
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-green-50 border border-green-200 text-green-800 px-6 py-4 rounded-lg mb-6"
-                >
-                  <div className="flex items-center">
-                    <svg
-                      className="w-5 h-5 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-semibold">
-                        Message sent successfully!
-                      </p>
-                      <p className="text-sm">
-                        Thank you for reaching out. I&apos;ll get back
-                        to you within 24 hours.
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
               <form
                 action={`https://formsubmit.co/${CONTACT_EMAIL}`}
                 method="POST"
@@ -245,19 +190,6 @@ export default function ContactSection() {
                 />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
-                <input
-                  type="hidden"
-                  name="_next"
-                  value={`${
-                    typeof window !== 'undefined'
-                      ? window.location.origin
-                      : 'https://rok-coaching.co.uk'
-                  }${
-                    typeof window !== 'undefined'
-                      ? window.location.pathname
-                      : ''
-                  }?success=true#contact`}
-                />
 
                 {/* First Name and Last Name */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -377,7 +309,7 @@ export default function ContactSection() {
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full py-4 px-6 bg-gradient-to-r bg-white text-black border-black font-heading font-semibold hover:scale-105 transition-all shadow-lg"
+                  className="w-full py-4 px-6 bg-primary text-white font-heading font-semibold hover:bg-primary-light hover:scale-105 transition-all shadow-lg"
                 >
                   Send Message
                 </button>
