@@ -224,8 +224,8 @@ export default function ContactSection() {
                         Message sent successfully!
                       </p>
                       <p className="text-sm">
-                        Thank you for reaching out. I'll get back to
-                        you within 24 hours.
+                        Thank you for reaching out. I&apos;ll get back
+                        to you within 24 hours.
                       </p>
                     </div>
                   </div>
