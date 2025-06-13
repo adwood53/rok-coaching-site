@@ -27,23 +27,23 @@ export default function WhoIHelpSection() {
   const helpPoints = [
     {
       icon: '+',
-      text: 'Have started something great - but want to scale it without losing themselves',
-      highlight: 'scale it without losing themselves',
+      text: 'Know you capable of more - but feel stuck in self-doubt or imposter syndrome',
+      highlight: 'capable of more - but feel stuck in self-doubt',
     },
     {
       icon: '+',
-      text: 'Are done playing small and ready to lead with purpose',
-      highlight: 'ready to lead with purpose',
+      text: "Are ready to lead boldly - without changing to fit someone else's mold",
+      highlight: 'ready to lead boldly',
     },
     {
       icon: '+',
-      text: 'Want structure, strategy and self-belief in equal measure',
-      highlight: 'structure, strategy and self-belief',
+      text: 'Are seeking clarity, not just in business - but on who you are as a leader',
+      highlight: 'seeking clarity, not just in business',
     },
     {
       icon: '+',
-      text: 'Are building something bigger than a business - a legacy',
-      highlight: 'building something bigger than a business',
+      text: 'Are ready to stop shrinking, start owning your space, and show up unapologetically',
+      highlight: 'stop shrinking, start owning your space',
     },
   ];
 
@@ -65,7 +65,7 @@ export default function WhoIHelpSection() {
             variants={fadeInUp}
             className="text-xs font-medium tracking-[0.2em] uppercase text-gray-500"
           >
-            ROK IS FOR WOMEN WHO...
+            ROK IS FOR PEOPLE WHO...
           </motion.p>
         </motion.div>
 
@@ -130,7 +130,7 @@ export default function WhoIHelpSection() {
             <div className="relative overflow-hidden shadow-2xl">
               <Image
                 src="/images/photos/1.png"
-                alt="ROK Coaching - Empowering Women Leaders"
+                alt="ROK Coaching - Empowering Leaders"
                 width={500}
                 height={400}
                 className="object-cover w-full h-[400px]"

@@ -11,7 +11,8 @@ export default function Logo({ className = '' }) {
       <motion.div
         //relative to fit image height but w-32 always
         className="relative w-32 h-full"
-        whileHover="hover"
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
       >
         <svg
           width="160"

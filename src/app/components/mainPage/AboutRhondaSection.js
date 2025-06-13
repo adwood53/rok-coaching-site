@@ -68,9 +68,9 @@ export default function AboutRhondaSection() {
               {/* Mobile quote overlay */}
               <div className="absolute bottom-8 left-6 right-6 lg:hidden">
                 <p className="text-white text-sm font-light italic leading-relaxed">
-                  &quot;I&apos;m a woman who knows what it feels like
-                  to second-guess yourself, dim your light, or shrink
-                  your ambition to fit the room.&quot;
+                  &quot;I know what it feels like to second-guess
+                  yourself, dim your light, or shrink your ambition to
+                  fit the room.&quot;
                 </p>
               </div>
             </div>
@@ -103,79 +103,41 @@ export default function AboutRhondaSection() {
               </h2>
             </motion.div>
 
-            {/* Content Blocks */}
+            {/* Content Blocks - Fixed spacing and typography */}
             <motion.div
               variants={fadeInUp}
               className="space-y-6 text-gray-600 leading-relaxed"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                {/* Left Content */}
-                <div className="space-y-6">
-                  <p className="text-base lg:text-lg font-light text-tertiary">
-                    I&apos;m{' '}
-                    <span className="text-primary font-medium">
-                      Rhonda Olsen
-                    </span>
-                    , business coach, mentor and trainer with a
-                    25-year global career in sales, marketing and
-                    operations.
-                  </p>
+              <div className="space-y-6">
+                <p className="text-lg font-light text-tertiary leading-relaxed">
+                  I&apos;m{' '}
+                  <span className="text-primary font-medium">
+                    Rhonda Olsen
+                  </span>
+                  , business coach, mentor and trainer with a 25-year
+                  global career in sales, marketing and operations.
+                </p>
 
-                  <p className="text-sm lg:text-base font-light text-tertiary">
-                    But I&apos;m also a woman who knows what it feels
-                    like to second-guess yourself, dim your light, or
-                    shrink your ambition to fit the room.
-                  </p>
-                </div>
+                <p className="text-lg font-light text-tertiary leading-relaxed">
+                  But I&apos;m also a person who knows what it feels
+                  like to second-guess yourself, dim your light, or
+                  shrink your ambition to fit the room.
+                </p>
 
-                {/* Right Content */}
-                <div className="space-y-6">
-                  <p className="text-base lg:text-lg font-light text-tertiary">
-                    <span className="text-secondary font-medium">
-                      ROK Coaching was born to change that.
-                    </span>
-                    <br />I work with women who are ready to step into
-                    their full potential - with clarity, confidence,
-                    and no apologies.
-                  </p>
+                <p className="text-lg font-light text-tertiary leading-relaxed">
+                  <span className="text-secondary font-medium">
+                    ROK Coaching was born to change that.
+                  </span>
+                  <br />I work with people who are ready to step into
+                  their full potential - with clarity, confidence, and
+                  no apologies.
+                </p>
 
-                  <p className="text-lg lg:text-xl font-light text-primary">
-                    Let&apos;s make{' '}
-                    <span className="font-body italic">your</span>{' '}
-                    bold vision a reality.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Stats Grid */}
-            <motion.div
-              variants={fadeInUp}
-              className="grid grid-cols-3 gap-8 py-8 border-t border-gray-200"
-            >
-              <div className="text-center lg:text-left">
-                <div className="text-2xl lg:text-3xl font-light text-secondary mb-1">
-                  25+
-                </div>
-                <div className="text-xs tracking-wide uppercase text-tertiary">
-                  Years Experience
-                </div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="text-2xl lg:text-3xl font-light text-secondary mb-1">
-                  20+
-                </div>
-                <div className="text-xs tracking-wide uppercase text-tertiary">
-                  Countries
-                </div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="text-2xl lg:text-3xl font-light text-secondary mb-1">
-                  40+
-                </div>
-                <div className="text-xs tracking-wide uppercase text-tertiary">
-                  Nationalities
-                </div>
+                <p className="text-xl font-light text-primary leading-relaxed">
+                  Let&apos;s make{' '}
+                  <span className="font-body italic">your</span> bold
+                  vision a reality.
+                </p>
               </div>
             </motion.div>
 

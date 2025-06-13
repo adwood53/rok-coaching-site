@@ -21,7 +21,7 @@ export default function HeroSection() {
       title: 'Confidence to Lead.',
       subtitle: 'Power to Grow.',
       description:
-        'ROK Coaching helps women unlock their boldest selves in business - with mentoring, strategy, and the belief they deserve to scale, lead, and thrive.',
+        'ROK Coaching helps people unlock their boldest selves in business - with mentoring, strategy, and the belief they deserve to scale, lead, and thrive.',
       cta: 'Start Your Journey',
       ctaLink: '#services',
       secondaryCta: 'Book Free Discovery Call',
@@ -33,7 +33,7 @@ export default function HeroSection() {
       title: "I've Been Where You Are.",
       subtitle: "That's Why I Built ROK.",
       description:
-        "I'm a woman who knows what it feels like to second-guess yourself, dim your light, or shrink your ambition to fit the room.",
+        'I know what it feels like to second-guess yourself, dim your light, or shrink your ambition to fit the room.',
       cta: 'Find Out More About Me',
       ctaLink: '#about',
       secondaryCta: "Let's Connect",
@@ -43,10 +43,9 @@ export default function HeroSection() {
       id: 3,
       image: '/images/photos/6.png',
       title: 'Ways to Work Together',
-      subtitle:
-        '1:1 Coaching • Strategy Days • Scale & Grow Mentorship',
+      subtitle: 'Executive 121 Coaching | Mentoring | Strategy Days',
       description:
-        'Choose the path that feels right for your journey - from intensive 1:1 coaching to strategic deep dives and community support.',
+        'Choose the path that feels right for your journey - from leadership coaching to strategic deep dives and community support.',
       cta: 'Explore Services',
       ctaLink: '#services',
       secondaryCta: 'Book Discovery Call',
@@ -127,16 +126,6 @@ export default function HeroSection() {
                 transition={{ duration: 1, ease: 'easeOut' }}
                 className="text-white"
               >
-                {/* Brand Label */}
-                <motion.p
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2, duration: 0.8 }}
-                  className="text-xs font-medium tracking-[0.2em] uppercase mb-6 text-gray-200"
-                >
-                  ROK Coaching
-                </motion.p>
-
                 {/* Main Headline */}
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
@@ -147,12 +136,12 @@ export default function HeroSection() {
                   {slides[currentSlide].title}
                 </motion.h1>
 
-                {/* Subtitle */}
+                {/* Subtitle - Increased font size and weight */}
                 <motion.h2
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.8 }}
-                  className="text-lg md:text-xl font-body font-light tracking-wide text-gray-200 mb-8 max-w-lg leading-relaxed"
+                  className="text-xl md:text-3xl lg:text-4xl font-heading font-bold tracking-wide text-white mb-8 max-w-lg leading-relaxed"
                 >
                   {slides[currentSlide].subtitle}
                 </motion.h2>

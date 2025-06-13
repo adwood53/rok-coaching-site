@@ -65,7 +65,7 @@ export default function ServicesSection() {
       title: 'Scale & Grow Mentorship',
       subtitle:
         'For ambitious founders ready to take their business global - with structure, support and soul.',
-      image: '/images/photos/2.png',
+      image: '/images/photos/10.jpg',
       features: [
         'Global expansion strategy',
         'Team leadership',
@@ -76,7 +76,7 @@ export default function ServicesSection() {
     },
     {
       title: 'Confidence Club',
-      subtitle: 'A space for women to rise together.',
+      subtitle: 'A space for people to rise together.',
       image: '/images/photos/1.png',
       features: [
         'Group mentorship',
@@ -120,12 +120,12 @@ export default function ServicesSection() {
             className="text-lg font-light text-gray-600 max-w-2xl mx-auto"
           >
             Choose the path that feels right for your journey - from
-            intensive 1:1 coaching to strategic deep dives and
-            community support.
+            leadership coaching to strategic deep dives and community
+            support.
           </motion.p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Services Grid - Reduced image size */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-16">
           {services.map((service, index) => (
             <motion.div
@@ -138,8 +138,8 @@ export default function ServicesSection() {
               whileHover={cardHover}
               className="group relative bg-primary overflow-hidden hover:shadow-fashion transition-shadow duration-700"
             >
-              {/* Image - 1:1 Square Aspect Ratio */}
-              <div className="relative w-[100%] aspect-[1/1] overflow-hidden">
+              {/* Image - Reduced aspect ratio from 1:1 to 5:4 for smaller height */}
+              <div className="relative w-[100%] aspect-[5/4] overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}

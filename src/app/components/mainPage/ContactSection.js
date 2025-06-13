@@ -5,84 +5,35 @@ import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
+
+// Centralized email configuration
+const CONTACT_EMAIL = 'rhonda@rok-coaching.com';
 
 export default function ContactSection() {
   const [selectedReason, setSelectedReason] = useState('');
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const searchParams = useSearchParams();
 
-  // Load HubSpot tracking script (replace with actual tracking ID)
+  // Check for success parameter from FormSubmit redirect
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.id = 'hs-script-loader';
-    script.async = true;
-    script.defer = true;
-    script.src = '//js.hs-scripts.com/########.js'; //Replace with genuine tracking ID
-    document.body.appendChild(script);
-
-    return () => {
-      const existingScript = document.getElementById(
-        'hs-script-loader'
-      );
-      if (existingScript) existingScript.remove();
-    };
-  }, []);
-
-  // Form submission handler
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const form = event.target;
-
-    const payload = {
-      fields: [
-        { name: 'firstname', value: form.firstname.value },
-        { name: 'lastname', value: form.lastname.value },
-        { name: 'email', value: form.email.value },
-        { name: 'company', value: form.company?.value || '' },
-        { name: 'message', value: form.message.value },
-        { name: 'reason', value: selectedReason },
-      ],
-      context: {
-        pageUri: window.location.href,
-        pageName: document.title,
-      },
-    };
-
-    console.log('Form submission payload:', payload);
-
-    try {
-      const response = await fetch(
-        'https://api.hsforms.com/submissions/v3/integration/submit/########/########-####-####-####-############',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(payload),
-        }
+    if (searchParams.get('success') === 'true') {
+      setShowSuccessMessage(true);
+      // Remove the success parameter from URL after showing message
+      window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
       );
 
-      const result = await response.json();
-
-      if (response.ok) {
-        console.log('Form submission successful!', result);
-        form.reset();
-        setSelectedReason('');
-        alert(
-          'Thank you for your message! We will get back to you soon.'
-        );
-      } else {
-        console.error('Form submission error:', result);
-        alert(
-          'There was an error submitting your form. Please try again later.'
-        );
-      }
-    } catch (error) {
-      console.error('Form submission exception:', error);
-      alert(
-        'There was an error submitting your form. Please try again later.'
-      );
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 5000);
     }
-  };
+  }, [searchParams]);
+
+  // No custom form handler needed - FormSubmit handles everything
 
   // Define reasons for the dropdown
   const reasons = [
@@ -189,10 +140,10 @@ export default function ContactSection() {
                         Email
                       </p>
                       <a
-                        href="mailto:rhonda@rok-coaching.com"
+                        href={`mailto:${CONTACT_EMAIL}`}
                         className="text-secondary hover:text-secondary-light transition-colors"
                       >
-                        rhonda@rok-coaching.com
+                        {CONTACT_EMAIL}
                       </a>
                     </div>
                   </div>
@@ -249,7 +200,65 @@ export default function ContactSection() {
                 Send Me a Message
               </h3>
 
-              <form className="space-y-6" onSubmit={handleSubmit}>
+              {/* Success Message */}
+              {showSuccessMessage && (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-green-50 border border-green-200 text-green-800 px-6 py-4 rounded-lg mb-6"
+                >
+                  <div className="flex items-center">
+                    <svg
+                      className="w-5 h-5 mr-2"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <div>
+                      <p className="font-semibold">
+                        Message sent successfully!
+                      </p>
+                      <p className="text-sm">
+                        Thank you for reaching out. I&apos;ll get back
+                        to you within 24 hours.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              <form
+                action={`https://formsubmit.co/${CONTACT_EMAIL}`}
+                method="POST"
+                className="space-y-6"
+              >
+                {/* FormSubmit Configuration */}
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New ROK Coaching Contact Form Submission"
+                />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value={`${
+                    typeof window !== 'undefined'
+                      ? window.location.origin
+                      : 'https://rok-coaching.co.uk'
+                  }${
+                    typeof window !== 'undefined'
+                      ? window.location.pathname
+                      : ''
+                  }?success=true#contact`}
+                />
+
                 {/* First Name and Last Name */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
