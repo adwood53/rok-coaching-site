@@ -155,15 +155,6 @@ export default function TestimonialsSection() {
                   </div>
 
                   {/* Image Section */}
-                  <div className="relative h-64">
-                    <Image
-                      src={testimonials[activeTestimonial].image}
-                      alt={`${testimonials[activeTestimonial].author} - ROK Coaching Client`}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
-                  </div>
                 </motion.div>
               </AnimatePresence>
             </motion.div>

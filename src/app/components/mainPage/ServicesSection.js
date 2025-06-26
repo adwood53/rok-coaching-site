@@ -39,7 +39,7 @@ export default function ServicesSection() {
       title: '1:1 Empowerment Coaching',
       subtitle:
         'Deep coaching to rediscover your confidence, map your goals, and own your brilliance.',
-      image: '/images/photos/4.png',
+      image: '/images/photos/17.png',
       features: [
         'Personal confidence building',
         'Goal mapping & strategy',
@@ -52,7 +52,7 @@ export default function ServicesSection() {
       title: 'Strategy Days',
       subtitle:
         'Focused time to rewire your offer, brand or leadership strategy - and leave recharged.',
-      image: '/images/photos/3.png',
+      image: '/images/photos/14.jpg',
       features: [
         'Brand positioning',
         'Offer optimization',
@@ -65,7 +65,8 @@ export default function ServicesSection() {
       title: 'Scale & Grow Mentorship',
       subtitle:
         'For ambitious founders ready to take their business global - with structure, support and soul.',
-      image: '/images/photos/10.jpg',
+      image: '/images/photos/12.jpg',
+
       features: [
         'Global expansion strategy',
         'Team leadership',
@@ -77,7 +78,8 @@ export default function ServicesSection() {
     {
       title: 'Confidence Club',
       subtitle: 'A space for people to rise together.',
-      image: '/images/photos/1.png',
+      image: '/images/photos/18.png',
+
       features: [
         'Group mentorship',
         'Peer support network',
@@ -139,7 +141,7 @@ export default function ServicesSection() {
               className="group relative bg-primary overflow-hidden hover:shadow-fashion transition-shadow duration-700"
             >
               {/* Image - Reduced aspect ratio from 1:1 to 5:4 for smaller height */}
-              <div className="relative w-[100%] aspect-[5/4] overflow-hidden">
+              <div className="relative w-[100%] aspect-[8/4] overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}

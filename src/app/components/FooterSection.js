@@ -94,7 +94,7 @@ export default function FooterSection() {
                     href="#contact"
                     className="text-blac/80 hover:text-secondary transition-colors hover:translate-x-1 transform inline-block duration-300"
                   >
-                    CONFIDENCE CLUB
+                    THE CONFIDENCE CLUB
                   </Link>
                 </li>
               </ul>
