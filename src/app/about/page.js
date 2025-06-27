@@ -135,13 +135,16 @@ export default function AboutRhonda() {
                   </h2>
 
                   <p className="text-lg font-light text-tertiary leading-relaxed">
-                    I&apos;m Rhonda Olsen - a business coach, mentor,
-                    and trainer with a 25-year journey building global
-                    operations across 20 countries and working with
-                    over 40 nationalities. My career has spanned
-                    boardrooms, startups, and scale-ups - but at the
-                    heart of it all is one truth: confidence changes
-                    everything.
+                    I&apos;m Rhonda Olsen -{' '}
+                    <strong>
+                      a qualified business and executive coach,
+                    </strong>{' '}
+                    mentor, and trainer with a 25-year journey
+                    building global operations in more than 20
+                    countries, working with over 40 nationalities. My
+                    career has spanned boardrooms, startups, and
+                    scale-ups - but at the heart of it all is one
+                    truth: leadership changes everything.
                   </p>
 
                   <p className="text-lg font-light text-tertiary leading-relaxed">

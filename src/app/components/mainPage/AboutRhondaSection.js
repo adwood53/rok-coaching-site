@@ -87,7 +87,7 @@ export default function AboutRhondaSection() {
             {/* Brand Label */}
             <motion.p
               variants={fadeInUp}
-              className="text-xs font-medium tracking-[0.2em] uppercase text-gray-500"
+              className="text-sm font-medium tracking-[0.2em] uppercase text-gray-500"
             >
               About the Founder
             </motion.p>
@@ -114,8 +114,11 @@ export default function AboutRhondaSection() {
                   <span className="text-primary font-medium">
                     Rhonda Olsen
                   </span>
-                  , business coach, mentor and trainer with a 25-year
-                  global career in sales, marketing and operations.
+                  <strong>
+                    a qualified business and executive coach,
+                  </strong>
+                  mentor and trainer with a 25-year global career in
+                  sales, marketing and operations.
                 </p>
 
                 <p className="text-lg font-light text-tertiary leading-relaxed">

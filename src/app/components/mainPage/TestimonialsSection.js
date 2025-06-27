@@ -11,27 +11,27 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        'Working with Rhonda changed how I saw myself. I went from tentative founder to confident CEO.',
+        'For me Rhonda’s mentorship, guidance and the times that she both challenged and supported me have all been instrumental in my development over the last few months.  I know a lot more about myself and understand the person and leader I want to be.  I will carry with me, the lessons she has so freely given, long into the future.',
       author: 'Maya',
-      role: 'Tech Startup Founder',
+      role: 'Global Director Supply Chain',
       image: '/images/photos/4.png',
       result: 'Scaled team from 3 to 15 people',
       color: 'primary',
     },
     {
       quote:
-        "I'd spent years helping others but forgot about me. Rhonda helped me find my power again.",
+        "Rhonda's incredibly skilled and insightful support and guidance as my coach has empowered me to focus on what I really want to achieve, start to rebuild my life and totally transformed how I see my future. I cannot thank her enough.",
       author: 'Aisha',
-      role: 'Service-Based Entrepreneur',
+      role: 'Strategy Consultant',
       image: '/images/photos/2.png',
       result: 'Doubled revenue in 6 months',
       color: 'secondary',
     },
     {
       quote:
-        "Rhonda doesn't just coach - she sees you. She believed in my vision when I couldn't.",
+        'Rhonda has many skills as a coach.  She has influenced the way I think, the way I speak and the way I act.  I am very grateful for the experience of working with her.',
       author: 'Sarah',
-      role: 'Creative Director',
+      role: 'International Operations Director',
       image: '/images/photos/6.png',
       result: 'Launched dream agency',
       color: 'tertiary',
@@ -87,14 +87,14 @@ export default function TestimonialsSection() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6"
           >
-            Words from Women I&apos;ve Worked With
+            Words from People I&apos;ve Worked With
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-xl text-tertiary max-w-3xl mx-auto"
           >
-            Real stories from real women who decided to stop playing
-            small and start leading boldly.
+            Real stories from real people who decided to stop playing
+            small and start leading life boldly.
           </motion.p>
         </motion.div>
 

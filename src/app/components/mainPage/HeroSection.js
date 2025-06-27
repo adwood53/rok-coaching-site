@@ -21,7 +21,7 @@ export default function HeroSection() {
       title: 'Confidence to Lead.',
       subtitle: 'Power to Grow.',
       description:
-        'ROK Coaching helps people unlock their boldest selves in business - with mentoring, strategy, and the belief they deserve to scale, lead, and thrive.',
+        'At ROK Coaching, we empower people to step into their boldest, most capable selves. Whether you’re ready to scale your business, elevate your leadership, or simply believe more deeply in your own potential—we’re here to guide the way. Through focused coaching, strategic mentoring and mindset transformation, we help you unlock the clarity, courage, and confidence to thrive.',
       cta: 'Start Your Journey',
       ctaLink: '#services',
       secondaryCta: 'Book Free Discovery Call',
@@ -43,7 +43,7 @@ export default function HeroSection() {
       id: 3,
       image: '/images/photos/6.png',
       title: 'Ways to Work Together',
-      subtitle: 'Executive 121 Coaching | Mentoring | Strategy Days',
+      subtitle: '121 Coaching | Mentoring | Strategy Days | Training',
       description:
         'Choose the path that feels right for your journey - from leadership coaching to strategic deep dives and community support.',
       cta: 'Explore Services',

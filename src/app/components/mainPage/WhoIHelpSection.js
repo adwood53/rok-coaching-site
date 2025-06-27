@@ -37,7 +37,7 @@ export default function WhoIHelpSection() {
     },
     {
       icon: '+',
-      text: 'Are seeking clarity, not just in business - but on who you are as a leader',
+      text: 'Are seeking clarity, not just in business - but on who you are as a leader and a person',
       highlight: 'seeking clarity, not just in business',
     },
     {
