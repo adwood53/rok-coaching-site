@@ -27,7 +27,7 @@ export default function WhoIHelpSection() {
   const helpPoints = [
     {
       icon: '+',
-      text: 'Know you capable of more - but feel stuck in self-doubt or imposter syndrome',
+      text: 'Know you are capable of more - but feel stuck in self-doubt or imposter syndrome',
       highlight: 'capable of more - but feel stuck in self-doubt',
     },
     {

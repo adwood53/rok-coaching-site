@@ -112,7 +112,7 @@ export default function AboutRhondaSection() {
                 <p className="text-lg font-light text-tertiary leading-relaxed">
                   I&apos;m{' '}
                   <span className="text-primary font-medium">
-                    Rhonda Olsen
+                    Rhonda Olsen,{' '}
                   </span>
                   <strong>
                     a qualified business and executive coach,

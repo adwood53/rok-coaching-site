@@ -43,7 +43,8 @@ export default function HeroSection() {
       id: 3,
       image: '/images/photos/6.png',
       title: 'Ways to Work Together',
-      subtitle: '121 Coaching | Mentoring | Strategy Days | Training',
+      subtitle:
+        '121 Coaching | Team Coaching | Mentoring | Strategy Days | Training',
       description:
         'Choose the path that feels right for your journey - from leadership coaching to strategic deep dives and community support.',
       cta: 'Explore Services',

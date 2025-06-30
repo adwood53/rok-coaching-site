@@ -140,20 +140,20 @@ export default function AboutRhonda() {
                       a qualified business and executive coach,
                     </strong>{' '}
                     mentor, and trainer with a 25-year journey
-                    building global operations in more than 20
-                    countries, working with over 40 nationalities. My
-                    career has spanned boardrooms, startups, and
-                    scale-ups - but at the heart of it all is one
-                    truth: leadership changes everything.
+                    building global sales in more than 20 countries,
+                    working with over 40 nationalities. My career has
+                    spanned boardrooms, startups, and scale-ups - but
+                    at the heart of it all is one truth: leadership
+                    changes everything.
                   </p>
 
                   <p className="text-lg font-light text-tertiary leading-relaxed">
-                    I created ROK Coaching to help women step into
-                    their power. I&apos;ve seen too many brilliant,
-                    capable women hold themselves back - not because
-                    they lacked talent, but because they lacked
-                    support, clarity, or belief. That&apos;s where I
-                    come in.
+                    I created ROK Coaching to help people like you
+                    step into their power. I&apos;ve seen too many
+                    brilliant, capable people hold themselves back -
+                    not because they lacked talent, but because they
+                    lacked support, clarity, or belief. That&apos;s
+                    where I come in.
                   </p>
 
                   <p className="text-lg font-light text-tertiary leading-relaxed">
@@ -170,8 +170,8 @@ export default function AboutRhonda() {
                   <p className="text-lg font-light text-tertiary leading-relaxed">
                     This isn&apos;t just about goals - it&apos;s about
                     growth. Bold, unapologetic, lasting growth. And if
-                    you&apos;re ready to lead like you mean it,
-                    I&apos;m ready to walk with you.
+                    you&apos;re ready to take the changes lead like
+                    you mean it, I&apos;m ready to walk with you.
                   </p>
                 </motion.div>
 

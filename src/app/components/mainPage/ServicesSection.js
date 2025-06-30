@@ -76,7 +76,7 @@ export default function ServicesSection() {
       category: 'Mentorship',
     },
     {
-      title: 'Confidence Club',
+      title: 'The Confidence Club',
       subtitle: 'A space for people to rise together.',
       image: '/images/photos/18.png',
 

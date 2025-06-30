@@ -12,28 +12,28 @@ export default function TestimonialsSection() {
     {
       quote:
         'For me Rhonda’s mentorship, guidance and the times that she both challenged and supported me have all been instrumental in my development over the last few months.  I know a lot more about myself and understand the person and leader I want to be.  I will carry with me, the lessons she has so freely given, long into the future.',
-      author: 'Maya',
+      author: '',
       role: 'Global Director Supply Chain',
       image: '/images/photos/4.png',
-      result: 'Scaled team from 3 to 15 people',
+      result: '',
       color: 'primary',
     },
     {
       quote:
         "Rhonda's incredibly skilled and insightful support and guidance as my coach has empowered me to focus on what I really want to achieve, start to rebuild my life and totally transformed how I see my future. I cannot thank her enough.",
-      author: 'Aisha',
+      author: '',
       role: 'Strategy Consultant',
       image: '/images/photos/2.png',
-      result: 'Doubled revenue in 6 months',
+      result: '',
       color: 'secondary',
     },
     {
       quote:
         'Rhonda has many skills as a coach.  She has influenced the way I think, the way I speak and the way I act.  I am very grateful for the experience of working with her.',
-      author: 'Sarah',
+      author: '',
       role: 'International Operations Director',
       image: '/images/photos/6.png',
-      result: 'Launched dream agency',
+      result: '',
       color: 'tertiary',
     },
   ];
