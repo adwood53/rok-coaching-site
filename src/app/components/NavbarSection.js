@@ -90,7 +90,7 @@ export default function NavbarSection() {
                 </Link>
               ))}
 
-              {/* CTA Button */}
+              {/* CTA Button 
               <Link
                 href="https://calendly.com/rhonda-rokcoaching"
                 target="_blank"
@@ -100,7 +100,7 @@ export default function NavbarSection() {
                 }
               >
                 Book Free Call
-              </Link>
+              </Link>*/}
             </div>
           </div>
 
@@ -170,6 +170,7 @@ export default function NavbarSection() {
                 ))}
 
                 {/* Mobile CTA */}
+                {/*
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -184,8 +185,8 @@ export default function NavbarSection() {
                     onClick={closeMobileMenu}
                   >
                     Book Free Call
-                  </Link>
-                </motion.div>
+                  </Link> 
+                </motion.div> */}
 
                 {/* Mobile Social Links */}
                 <motion.div
