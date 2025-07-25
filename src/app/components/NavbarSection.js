@@ -89,7 +89,6 @@ export default function NavbarSection() {
                   {item.name}
                 </Link>
               ))}
-              CTA Button
               <Link
                 href="https://calendly.com/rhonda-rok-coaching-jtdb"
                 target="_blank"
