@@ -153,7 +153,7 @@ export default function ContactSection() {
 
                   <div className="pt-4 border-t border-white/20">
                     <Link
-                      href="https://calendly.com/rhonda-rokcoaching"
+                      href="https://calendly.com/rhonda-rok-coaching-jtdb"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-secondary text-white px-6 py-3 font-semibold hover:bg-secondary-light hover:scale-105 transition-all"

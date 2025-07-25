@@ -89,10 +89,9 @@ export default function NavbarSection() {
                   {item.name}
                 </Link>
               ))}
-
-              {/* CTA Button 
+              CTA Button
               <Link
-                href="https://calendly.com/rhonda-rokcoaching"
+                href="https://calendly.com/rhonda-rok-coaching-jtdb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={
@@ -100,7 +99,7 @@ export default function NavbarSection() {
                 }
               >
                 Book Free Call
-              </Link>*/}
+              </Link>
             </div>
           </div>
 
@@ -170,7 +169,6 @@ export default function NavbarSection() {
                 ))}
 
                 {/* Mobile CTA */}
-                {/*
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -178,15 +176,15 @@ export default function NavbarSection() {
                   className="pt-8"
                 >
                   <Link
-                    href="https://calendly.com/rhonda-rokcoaching"
+                    href="https://calendly.com/rhonda-rok-coaching-jtdb"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block px-8 py-4 bg-primary text-white text-sm font-heading font-medium tracking-wide uppercase hover:bg-primary-light transition-all duration-300"
                     onClick={closeMobileMenu}
                   >
                     Book Free Call
-                  </Link> 
-                </motion.div> */}
+                  </Link>
+                </motion.div>
 
                 {/* Mobile Social Links */}
                 <motion.div
